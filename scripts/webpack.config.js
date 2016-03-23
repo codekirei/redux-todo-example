@@ -47,27 +47,29 @@ const loaders = env => [babelLoader(env), cssLoader(env)]
 
 // plugins
 //------------------------------------------------------------------------------
-function plugins(env) {
-  const pluginAr = [new webpack.optimize.OccurenceOrderPlugin()]
-  if (env === 'dev') pluginAr.push(new webpack.HotModuleReplacementPlugin())
-  else {
-    pluginAr.push(
-      new webpack.DefinePlugin({
-        'process.env': {
-          NODE_ENV: '"production"',
-        },
-      }),
-      new webpack.optimize.DedupePlugin(),
-      new webpack.optimize.UglifyJsPlugin({
-        compress: {
-          screw_ie8: true,
-        },
-      }),
-      new ExtractTextPlugin('style.css', { allChunks: true })
-    )
-  }
-  return pluginAr
-}
+const plugins = env => []
+  .concat(
+  [ // common plugins
+    new webpack.optimize.OccurenceOrderPlugin(),
+  ])
+  .concat(env === 'dev' ?
+  [ // dev plugins
+    new webpack.HotModuleReplacementPlugin(),
+  ] :
+  [ // dist plugins
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: '"production"',
+      },
+    }),
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        screw_ie8: true,
+      },
+    }),
+    new ExtractTextPlugin('style.css', { allChunks: true }),
+  ])
 
 // config
 //------------------------------------------------------------------------------
