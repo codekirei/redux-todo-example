@@ -1,16 +1,22 @@
 import React from 'react'
-import { render } from 'react-dom'
+import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
-import Root from './components/root.jsx'
-import initializeStore from './store'
+import initStore from './store'
 import './styles/index.css'
 
-let initialState
-const store = initializeStore(initialState)
+const store = initStore()
+const rootEl = document.getElementById('root')
 
-render(
-  <Provider store={store}>
-    <Root />
-  </Provider>,
-  document.getElementById('root')
-)
+const render = () => {
+  const Root = require('./components/root.jsx').default
+  ReactDOM.render(
+    <Provider store={store}>
+      <Root />
+    </Provider>,
+    rootEl
+  )
+}
+
+if (module.hot) module.hot.accept('./components/root.jsx', () => setTimeout(render))
+
+render()
