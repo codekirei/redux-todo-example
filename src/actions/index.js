@@ -1,4 +1,8 @@
-import { ADD_TODO, SET_FILTER, TOGGLE_TODO } from '../constants/action-types'
+import {
+  ADD_TODO,
+  SET_FILTER,
+  TOGGLE_TODO,
+} from '../constants/action-types'
 
 let nextTodoId = 0
 
