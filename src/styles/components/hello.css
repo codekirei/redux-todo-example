@@ -1,0 +1,5 @@
+@import "../globals";
+
+.hello {
+  color: $fg;
+}

@@ -1,0 +1,5 @@
+--require babel-register
+--require ignore-styles
+--ui exports
+--recursive test/**/*.js?(x)
+--reporter mocha-tldr-reporter
