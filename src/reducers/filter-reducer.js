@@ -4,9 +4,7 @@ import { reducer } from './reducer-utils'
 
 const initialState = SHOW_ALL
 
-const filterReducer = (state = initialState, { type, filter }) =>
+export default (state = initialState, { type, filter }) =>
   reducer(state, type, {
     [SET_FILTER]: () => filter,
   })
-
-export default filterReducer
