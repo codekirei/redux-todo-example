@@ -1,7 +1,7 @@
 import { createStore } from 'redux'
 import reducer from '../reducers'
 
-const initializeStore = initialState => {
+export default (initialState) => {
   const store = createStore(reducer, initialState)
   if (module.hot) {
     module.hot.accept('../reducers', () => {
@@ -11,5 +11,3 @@ const initializeStore = initialState => {
   }
   return store
 }
-
-export default initializeStore

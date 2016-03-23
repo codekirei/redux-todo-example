@@ -1,6 +1,6 @@
 const initialState = 'SHOW_ALL'
 
-const filter = (state = initialState, action) => {
+export default (state = initialState, action) => {
   switch (action.type) {
     case 'SET_FILTER':
       return action.filter
@@ -8,5 +8,3 @@ const filter = (state = initialState, action) => {
       return state
   }
 }
-
-export default filter
