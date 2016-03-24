@@ -3,4 +3,3 @@
   - reducers
 - no presentation in containers
 - modularize logic in containers
-- react-hyperscript?

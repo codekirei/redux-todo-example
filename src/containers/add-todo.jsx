@@ -4,6 +4,7 @@ import { addTodo } from '../actions'
 
 const AddTodo = ({ dispatch }) => {
   let input
+  const storeInput = text => { input = text }
 
   const onSubmit = e => {
     e.preventDefault()
@@ -15,7 +16,7 @@ const AddTodo = ({ dispatch }) => {
   return (
     <div>
       <form onSubmit={onSubmit} >
-        <input ref={text => { input = text }} />
+        <input ref={storeInput} />
         <button type="submit">Add Todo</button>
       </form>
     </div>
