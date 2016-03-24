@@ -1,15 +1,13 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import { addTodo } from '../actions'
+import React, { PropTypes as types } from 'react'
 
-const AddTodo = ({ dispatch }) => {
+const TodoForm = ({ submitHandler }) => {
   let input
-  const storeInput = text => { input = text }
+  const storeInput = node => { input = node }
 
   const onSubmit = e => {
     e.preventDefault()
     if (!input.value.trim()) return
-    dispatch(addTodo(input.value))
+    submitHandler(input.value)
     input.value = ''
   }
 
@@ -23,4 +21,8 @@ const AddTodo = ({ dispatch }) => {
   )
 }
 
-export default connect()(AddTodo)
+TodoForm.propTypes = {
+  submitHandler: types.func.isRequired,
+}
+
+export default TodoForm

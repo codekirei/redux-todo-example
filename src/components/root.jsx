@@ -1,11 +1,11 @@
 import React from 'react'
+import TodoFormContainer from '../containers/todo-form-container'
 import Footer from './footer.jsx'
-import AddTodo from '../containers/add-todo.jsx'
 import TodoListContainer from '../containers/todo-list-container'
 
 const Root = () => (
   <div className="react">
-    <AddTodo />
+    <TodoFormContainer />
     <TodoListContainer />
     <Footer />
   </div>
