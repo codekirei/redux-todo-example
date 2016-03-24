@@ -1,3 +1,2 @@
 @import "./globals";
-@import "./components/root";
-@import "./components/hello";
+@import "./components/todo";

@@ -1,5 +1,4 @@
 - better root component layout
-- move strikethrough to css
 - immutable
 - tests
   - components
