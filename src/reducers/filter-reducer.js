@@ -1,10 +1,10 @@
-import { SHOW_ALL } from '../constants/filters'
-import { SET_FILTER } from '../constants/action-types'
-import { reducer } from './reducer-utils'
+import { SHOW_ALL } from '../constants/filter-constants'
+import { SET_FILTER } from '../constants/action-constants'
+import { createReducer } from '../utils'
 
 const initialState = SHOW_ALL
 
 export default (state = initialState, { type, filter }) =>
-  reducer(state, type, {
+  createReducer(state, type, {
     [SET_FILTER]: () => filter,
   })

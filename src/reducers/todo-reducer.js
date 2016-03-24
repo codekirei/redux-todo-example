@@ -1,8 +1,8 @@
-import { ADD_TODO, TOGGLE_TODO } from '../constants/action-types'
-import { reducer } from './reducer-utils'
+import { ADD_TODO, TOGGLE_TODO } from '../constants/action-constants'
+import { createReducer } from '../utils'
 
 export default (state, { type, key, text }) =>
-  reducer(state, type, {
+  createReducer(state, type, {
     [ADD_TODO]: () => ({ key, text, completed: false }),
     [TOGGLE_TODO]: () => state.key !== key
       ? state

@@ -2,7 +2,7 @@ import {
   ADD_TODO,
   SET_FILTER,
   TOGGLE_TODO,
-} from '../constants/action-types'
+} from '../constants/action-constants'
 
 let nextTodoId = 0
 

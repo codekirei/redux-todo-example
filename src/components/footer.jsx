@@ -1,6 +1,10 @@
 import React from 'react'
 import LinkContainer from '../containers/link-container'
-import { SHOW_ALL, SHOW_ACTIVE, SHOW_COMPLETED } from '../constants/filters'
+import {
+  SHOW_ALL,
+  SHOW_ACTIVE,
+  SHOW_COMPLETED,
+} from '../constants/filter-constants'
 import { join } from '../utils'
 
 const Footer = () => {

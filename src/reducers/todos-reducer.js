@@ -1,11 +1,11 @@
-import { ADD_TODO, TOGGLE_TODO } from '../constants/action-types'
-import { reducer } from './reducer-utils'
+import { ADD_TODO, TOGGLE_TODO } from '../constants/action-constants'
+import { createReducer } from '../utils'
 import todoReducer from './todo-reducer'
 
 const initialState = []
 
 export default (state = initialState, action) =>
-  reducer(state, action.type, {
+  createReducer(state, action.type, {
     [ADD_TODO]: () => [...state, todoReducer(void 0, action)],
     [TOGGLE_TODO]: () => state.map(todo => todoReducer(todo, action)),
   })
