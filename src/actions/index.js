@@ -3,12 +3,11 @@ import {
   SET_FILTER,
   TOGGLE_TODO,
 } from '../constants/action-constants'
-
-let nextTodoId = 0
+import { v4 as uuid } from 'node-uuid'
 
 export const addTodo = text => ({
   type: ADD_TODO,
-  key: nextTodoId++,
+  id: uuid(),
   text,
 })
 
@@ -17,7 +16,7 @@ export const setFilter = filter => ({
   filter,
 })
 
-export const toggleTodo = key => ({
+export const toggleTodo = id => ({
   type: TOGGLE_TODO,
-  key,
+  id,
 })

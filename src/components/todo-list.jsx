@@ -1,14 +1,8 @@
 import React, { PropTypes as types } from 'react'
-import Todo from './todo.jsx'
+import TodoContainer from '../containers/todo-container'
 
-const TodoList = ({ todos, onTodoClick }) => {
-  const todo = todoProps => (
-    <Todo
-      onClick={() => onTodoClick(todoProps.key)}
-      {...todoProps}
-    />
-  )
-
+const TodoList = ({ todos }) => {
+  const todo = todoProps => <TodoContainer {...todoProps} />
   return (
     <ul>
       {todos.map(todo)}
@@ -18,7 +12,6 @@ const TodoList = ({ todos, onTodoClick }) => {
 
 TodoList.propTypes = {
   todos: types.array.isRequired,
-  onTodoClick: types.func.isRequired,
 }
 
 export default TodoList

@@ -1,4 +1,5 @@
 - try to manage Todo onClick in Todo instead of TodoList
+- move strikethrough to css
 - immutable
 - tests
   - components

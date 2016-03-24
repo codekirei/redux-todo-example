@@ -1,13 +1,13 @@
 import React, { PropTypes as types } from 'react'
 
-const TodoForm = ({ submitHandler }) => {
+const TodoForm = ({ handleSubmit }) => {
   let input
   const storeInput = node => { input = node }
 
   const onSubmit = e => {
     e.preventDefault()
     if (!input.value.trim()) return
-    submitHandler(input.value)
+    handleSubmit(input.value)
     input.value = ''
   }
 
@@ -22,7 +22,7 @@ const TodoForm = ({ submitHandler }) => {
 }
 
 TodoForm.propTypes = {
-  submitHandler: types.func.isRequired,
+  handleSubmit: types.func.isRequired,
 }
 
 export default TodoForm

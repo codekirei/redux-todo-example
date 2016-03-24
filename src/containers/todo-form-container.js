@@ -5,6 +5,6 @@ import TodoForm from '../components/todo-form.jsx'
 export default connect(
   null,
   dispatch => ({
-    submitHandler: value => dispatch(addTodo(value)),
+    handleSubmit: value => dispatch(addTodo(value)),
   })
 )(TodoForm)
