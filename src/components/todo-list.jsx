@@ -4,8 +4,7 @@ import Todo from './todo.jsx'
 const TodoList = ({ todos, onTodoClick }) => {
   const todoFactory = todo => (
     <Todo
-      key={todo.id}
-      onClick={() => onTodoClick(todo.id)}
+      onClick={() => onTodoClick(todo.key)}
       {...todo}
     />
   )

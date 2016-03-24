@@ -8,7 +8,7 @@ let nextTodoId = 0
 
 export const addTodo = text => ({
   type: ADD_TODO,
-  id: nextTodoId++,
+  key: nextTodoId++,
   text,
 })
 
@@ -17,7 +17,7 @@ export const setFilter = filter => ({
   filter,
 })
 
-export const toggleTodo = id => ({
+export const toggleTodo = key => ({
   type: TOGGLE_TODO,
-  id,
+  key,
 })
