@@ -4,7 +4,7 @@ import AddTodo from '../containers/add-todo.jsx'
 import TodoListContainer from '../containers/todo-list-container'
 
 const Root = () => (
-  <div>
+  <div className="react">
     <AddTodo />
     <TodoListContainer />
     <Footer />

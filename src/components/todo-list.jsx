@@ -1,17 +1,21 @@
 import React, { PropTypes as types } from 'react'
 import Todo from './todo.jsx'
 
-const TodoList = ({ todos, onTodoClick }) => (
-  <ul>
-    {todos.map(todo =>
-      <Todo
-        key={todo.id}
-        {...todo}
-        onClick={() => onTodoClick(todo.id)}
-      />
-    )}
-  </ul>
-)
+const TodoList = ({ todos, onTodoClick }) => {
+  const todoFactory = todo => (
+    <Todo
+      key={todo.id}
+      onClick={() => onTodoClick(todo.id)}
+      {...todo}
+    />
+  )
+
+  return (
+    <ul>
+      {todos.map(todoFactory)}
+    </ul>
+  )
+}
 
 TodoList.propTypes = {
   todos: types.array.isRequired,
