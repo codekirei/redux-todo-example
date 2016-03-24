@@ -1,5 +1,5 @@
-- try to put manage Todo onClick in Todo instead of TodoList
-- time travel debugger
+- try to manage Todo onClick in Todo instead of TodoList
+- immutable
 - tests
   - components
   - reducers

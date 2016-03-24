@@ -1,9 +1,19 @@
 import React from 'react'
 import TodoFormContainer from '../containers/todo-form-container'
-import Footer from './footer.jsx'
 import TodoListContainer from '../containers/todo-list-container'
+import Footer from './footer.jsx'
+import DevTools from './devtools.jsx'
 
-const Root = () => (
+const DevRoot = () => (
+  <div className="react">
+    <TodoFormContainer />
+    <TodoListContainer />
+    <Footer />
+    <DevTools />
+  </div>
+)
+
+const ProductionRoot = () => (
   <div className="react">
     <TodoFormContainer />
     <TodoListContainer />
@@ -11,4 +21,8 @@ const Root = () => (
   </div>
 )
 
-export default Root
+if (process.env.NODE_ENV === 'production') {
+  module.exports = ProductionRoot
+} else {
+  module.exports = DevRoot
+}

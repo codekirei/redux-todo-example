@@ -10,8 +10,8 @@ const Footer = () => {
     [SHOW_COMPLETED]: 'Completed',
   }
 
-  const filters = Object.keys(filterText).map((filter, key) => (
-    <LinkContainer filter={filter} key={key}>
+  const filters = Object.keys(filterText).map((filter, i) => (
+    <LinkContainer filter={filter} key={i}>
       { filterText[filter] }
     </LinkContainer>
   ))
