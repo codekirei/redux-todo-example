@@ -1,6 +1,6 @@
+- try to put manage Todo onClick in Todo instead of TodoList
 - time travel debugger
 - tests
   - components
   - reducers
-- no presentation in containers
-- modularize logic in containers
+  - utils

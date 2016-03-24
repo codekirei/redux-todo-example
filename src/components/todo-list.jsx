@@ -2,16 +2,16 @@ import React, { PropTypes as types } from 'react'
 import Todo from './todo.jsx'
 
 const TodoList = ({ todos, onTodoClick }) => {
-  const todoFactory = todo => (
+  const todo = todoProps => (
     <Todo
-      onClick={() => onTodoClick(todo.key)}
-      {...todo}
+      onClick={() => onTodoClick(todoProps.key)}
+      {...todoProps}
     />
   )
 
   return (
     <ul>
-      {todos.map(todoFactory)}
+      {todos.map(todo)}
     </ul>
   )
 }
