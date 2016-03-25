@@ -1,4 +1,4 @@
-import { createStore, compose } from 'redux'
+import { createStore, applyMiddleware, compose } from 'redux'
 import reducer from '../reducers'
 import DevTools from '../components/devtools.jsx'
 
@@ -6,6 +6,9 @@ const initialState = void 0
 
 export const devStore = (state = initialState) => {
   const enhancer = compose(
+    applyMiddleware(
+      require('redux-immutable-state-invariant')()
+    ),
     DevTools.instrument()
   )
   const store = createStore(reducer, state, enhancer)
