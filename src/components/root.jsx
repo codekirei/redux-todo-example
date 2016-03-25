@@ -4,7 +4,7 @@ import TodoListContainer from '../containers/todo-list-container'
 import Footer from './footer.jsx'
 import DevTools from './devtools.jsx'
 
-const DevRoot = () => (
+export const DevRoot = () => (
   <div className="react">
     <TodoFormContainer />
     <TodoListContainer />
@@ -13,16 +13,10 @@ const DevRoot = () => (
   </div>
 )
 
-const ProductionRoot = () => (
+export const ProductionRoot = () => (
   <div className="react">
     <TodoFormContainer />
     <TodoListContainer />
     <Footer />
   </div>
 )
-
-if (process.env.NODE_ENV === 'production') {
-  module.exports = ProductionRoot
-} else {
-  module.exports = DevRoot
-}

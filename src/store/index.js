@@ -4,11 +4,10 @@ import DevTools from '../components/devtools.jsx'
 
 const initialState = void 0
 
-const enhancer = compose(
-  DevTools.instrument()
-)
-
-const devStore = (state = initialState) => {
+export const devStore = (state = initialState) => {
+  const enhancer = compose(
+    DevTools.instrument()
+  )
   const store = createStore(reducer, state, enhancer)
   if (module.hot) {
     module.hot.accept('../reducers', () =>
@@ -18,10 +17,4 @@ const devStore = (state = initialState) => {
   return store
 }
 
-const productionStore = (state = initialState) => createStore(reducer, state)
-
-if (process.env.NODE_ENV === 'production') {
-  module.exports = productionStore
-} else {
-  module.exports = devStore
-}
+export const productionStore = (state = initialState) => createStore(reducer, state)
