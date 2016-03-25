@@ -1,4 +1,3 @@
-- immutable
 - tests
   - components
   - reducers

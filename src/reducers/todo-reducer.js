@@ -1,16 +1,16 @@
 import { ADD_TODO, TOGGLE_TODO } from '../constants/action-constants'
 import { createReducer } from '../utils'
 
-export default (state, { type, id, text }) =>
-  createReducer(state, type, {
+export default (todo, { type, id, text }) =>
+  createReducer(todo, type, {
     [ADD_TODO]: () => ({
       id,
       text,
       key: id,
       completed: false,
     }),
-    [TOGGLE_TODO]: () => state.id !== id
-      ? state
-      : Object.assign({}, state, { completed: !state.completed })
+    [TOGGLE_TODO]: () => todo.id !== id
+      ? todo
+      : Object.assign({}, todo, { completed: !todo.completed })
       ,
   })
