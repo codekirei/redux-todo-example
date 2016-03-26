@@ -8,21 +8,21 @@ chai.use(chaiEnzyme())
 
 // test cases ----------------------------------------------
 
-import Hello from '../../src/components/hello.jsx'
+// import Hello from '../../src/components/hello.jsx'
+//
+// const component = shallow(<Hello />)
 
-const component = shallow(<Hello />)
-
-exports['Hello component'] = {
-  element: () => {
-    expect(component).to.have.tagName('div')
-  },
-  className: () => {
-    expect(component).to.have.className('hello')
-  },
-  'text -- default': () => {
-    expect(component).to.have.text('hello world!')
-  },
-  'text -- custom': () => {
-    expect(shallow(<Hello text="foo" />)).to.have.text('foo')
-  },
-}
+// exports['Hello component'] = {
+//   element: () => {
+//     expect(component).to.have.tagName('div')
+//   },
+//   className: () => {
+//     expect(component).to.have.className('hello')
+//   },
+//   'text -- default': () => {
+//     expect(component).to.have.text('hello world!')
+//   },
+//   'text -- custom': () => {
+//     expect(shallow(<Hello text="foo" />)).to.have.text('foo')
+//   },
+// }

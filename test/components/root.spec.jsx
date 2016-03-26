@@ -8,10 +8,10 @@ chai.use(chaiEnzyme())
 
 // test cases ----------------------------------------------
 
-import Root from '../../src/components/root.jsx'
-
-exports['Root component'] = {
-  'render hello': () => {
-    expect(shallow(<Root />).shallow()).to.have.text('hello world!')
-  },
-}
+// import Root from '../../src/components/root.jsx'
+//
+// exports['Root component'] = {
+//   'render hello': () => {
+//     expect(shallow(<Root />).shallow()).to.have.text('hello world!')
+//   },
+// }
