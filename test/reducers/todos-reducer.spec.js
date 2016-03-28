@@ -6,6 +6,7 @@ import {
 } from '../../src/actions'
 
 exports['todos-reducer'] = {
+  'initial todos': () => expect(todosReducer(undefined, { type: undefined })).to.deep.equal([]),
   addTodo: () => {
     const todos = []
     const result = todosReducer(todos, addTodo('foo'))
