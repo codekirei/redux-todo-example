@@ -1,4 +1,7 @@
+- fix component/container testing
+  - look at how redux/todomvc does it
+  - is enzyme compatible?
 - tests
   - components
-  - reducers
+  - containers
   - utils
