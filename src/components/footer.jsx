@@ -16,9 +16,11 @@ const Footer = () => {
   }
 
   const filterNodes = Object.keys(filters).map(filter => (
-    <LinkContainer filter={filter} key={uuid()}>
-      { filters[filter] }
-    </LinkContainer>
+    <LinkContainer
+      filter={filter}
+      key={uuid()}
+      text={filters[filter]}
+    />
   ))
 
   return (

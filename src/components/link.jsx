@@ -1,7 +1,7 @@
 import React, { PropTypes as types } from 'react'
 
-const Link = ({ active, children, clickHandler }) => {
-  if (active) return <span>{children}</span>
+const Link = ({ active, clickHandler, text }) => {
+  if (active) return <span>{text}</span>
 
   const onClick = e => {
     e.preventDefault()
@@ -10,15 +10,15 @@ const Link = ({ active, children, clickHandler }) => {
 
   return (
     <a href="#" onClick={onClick}>
-      {children}
+      {text}
     </a>
   )
 }
 
 Link.propTypes = {
   active: types.bool.isRequired,
-  children: types.node.isRequired,
   clickHandler: types.func.isRequired,
+  text: types.string.isRequired,
 }
 
 export default Link
