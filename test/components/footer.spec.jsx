@@ -1,12 +1,22 @@
-// test modules --------------------------------------------
+// modules -------------------------------------------------
 
 import React from 'react'
-import { shallow } from 'enzyme'
+import { shallow, mount } from 'enzyme'
 import chai, { expect } from 'chai'
 import chaiEnzyme from 'chai-enzyme'
-chai.use(chaiEnzyme())
-
-// test cases ----------------------------------------------
 
 import Footer from '../../src/components/footer.jsx'
-// const component = shallow(<Footer />)
+
+// setup ---------------------------------------------------
+
+chai.use(chaiEnzyme())
+const output = shallow(<Footer />)
+// const output = shallow(<Footer />)
+
+// cases ---------------------------------------------------
+
+exports['<Footer />'] = {
+
+  'is a <p>': () => expect(output).to.have.tagName('p'),
+
+}

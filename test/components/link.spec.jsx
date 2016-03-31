@@ -1,7 +1,9 @@
 import React from 'react'
 import sinon from 'sinon'
 import { shallow, mount } from 'enzyme'
-import { expect } from 'chai'
+import chai, { expect } from 'chai'
+import chaiEnzyme from 'chai-enzyme'
+chai.use(chaiEnzyme())
 
 import Link from '../../src/components/link.jsx'
 
@@ -17,17 +19,17 @@ exports['<Link />'] = {
 
   'is <span> if props.active === true': () => {
     const output = shallow(<Link {...props({ active: true })} />)
-    expect(output.type()).to.equal('span')
+    expect(output).to.have.tagName('span')
   },
 
   'is <a> if props.active === false': () => {
     const output = shallow(<Link {...props()} />)
-    expect(output.type()).to.equal('a')
+    expect(output).to.have.tagName('a')
   },
 
   'receive props.text': () => {
     const output = shallow(<Link {...props()} />)
-    expect(output.props().children).to.equal(defaultProps.text)
+    expect(output).to.have.text(defaultProps.text)
   },
 
   'handle clicks with props.clickHandler': () => {

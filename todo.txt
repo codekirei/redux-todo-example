@@ -1,7 +1,6 @@
-- fix component/container testing
-  - look at how redux/todomvc does it
-  - is enzyme compatible?
+- figure out why components that have containers as children will not shallow render
 - tests
+  - combined reducers
   - components
   - containers
   - utils
