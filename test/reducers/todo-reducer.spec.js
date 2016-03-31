@@ -30,6 +30,7 @@ const toggleTodoCase = todo => todoReducer(todos[todo], toggleTodo(2))
 // cases
 //----------------------------------------------------------
 exports['todo-reducer'] = {
+
   addTodo: {
     before: () => { addedTodo = todoReducer(null, addTodo(text)) },
     id: () => expect(addedTodo.id).to.be.a('string'),
@@ -37,6 +38,7 @@ exports['todo-reducer'] = {
     text: () => expect(addedTodo.text).to.equal(text),
     completed: () => expect(addedTodo.completed).to.be.false,
   },
+
   toggleTodo: {
     differentId: () =>
       expect(toggleTodoCase('differentId'))
@@ -48,4 +50,5 @@ exports['todo-reducer'] = {
       expect(toggleTodoCase('notCompleted'))
         .to.deep.equal(todos.completed),
   },
+
 }

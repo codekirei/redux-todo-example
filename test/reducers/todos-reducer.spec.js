@@ -6,13 +6,16 @@ import {
 } from '../../src/actions'
 
 exports['todos-reducer'] = {
+
   'initial todos': () => expect(todosReducer(undefined, { type: undefined })).to.deep.equal([]),
+
   addTodo: () => {
     const todos = []
     const result = todosReducer(todos, addTodo('foo'))
     expect(todos.length).to.equal(0)
     expect(result.length).to.equal(1)
   },
+
   toggleTodo: () => {
     const todos = [
       { id: 1, completed: true },
@@ -27,4 +30,5 @@ exports['todos-reducer'] = {
       { id: 2, completed: true },
     ])
   },
+
 }

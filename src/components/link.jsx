@@ -8,11 +8,7 @@ const Link = ({ active, clickHandler, text }) => {
     clickHandler()
   }
 
-  return (
-    <a href="#" onClick={onClick}>
-      {text}
-    </a>
-  )
+  return <a href="#" onClick={onClick}>{text}</a>
 }
 
 Link.propTypes = {

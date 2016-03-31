@@ -1,4 +1,5 @@
 --require babel-register
+--require scripts/jsdom
 --require ignore-styles
 --ui exports
 --recursive test/**/*.js?(x)
