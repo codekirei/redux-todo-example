@@ -4,9 +4,9 @@ import {
 } from '../constants/action-constants'
 import createReducer from '../utils/create-reducer'
 
-const initialTodos = []
+export const initialState = []
 
-export default (todos = initialTodos, { type, id, text }) =>
+export default (todos = initialState, { type, id, text }) =>
   createReducer(todos, type, {
     [ADD_TODO]: () => todos.concat({
       id,

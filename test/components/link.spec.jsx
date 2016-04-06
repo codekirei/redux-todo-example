@@ -5,7 +5,7 @@ import chai, { expect } from 'chai'
 import chaiEnzyme from 'chai-enzyme'
 chai.use(chaiEnzyme())
 
-import Link from '../../src/components/link.jsx'
+import Link from '../../src/components/pure/link.jsx'
 
 const defaultProps = {
   active: false,
