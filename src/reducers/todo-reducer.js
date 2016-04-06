@@ -1,5 +1,8 @@
-import { ADD_TODO, TOGGLE_TODO } from '../constants/action-constants'
-import { createReducer } from '../utils'
+import {
+  ADD_TODO,
+  TOGGLE_TODO,
+} from '../constants/action-constants'
+import createReducer from '../utils/create-reducer'
 
 export default (todo, { type, id, text }) =>
   createReducer(todo, type, {

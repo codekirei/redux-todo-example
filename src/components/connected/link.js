@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
-import { setFilter } from '../actions'
-import Link from '../components/link.jsx'
+import { setFilter } from '../../actions'
+import Link from '../pure/link.jsx'
 
 export default connect(
   (state, props) => ({

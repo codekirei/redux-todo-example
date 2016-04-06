@@ -1,5 +1,8 @@
-import { ADD_TODO, TOGGLE_TODO } from '../constants/action-constants'
-import { createReducer } from '../utils'
+import {
+  ADD_TODO,
+  TOGGLE_TODO,
+} from '../constants/action-constants'
+import createReducer from '../utils/create-reducer'
 import todoReducer from './todo-reducer'
 
 const initialTodos = []

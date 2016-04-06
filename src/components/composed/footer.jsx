@@ -1,12 +1,12 @@
 import React from 'react'
-import LinkContainer from '../containers/link-container'
+import { v4 as uuid } from 'node-uuid'
 import {
   SHOW_ALL,
   SHOW_ACTIVE,
   SHOW_COMPLETED,
-} from '../constants/filter-constants'
-import { join } from '../utils'
-import { v4 as uuid } from 'node-uuid'
+} from '../../constants/filter-constants'
+import join from '../../utils/join'
+import Link from '../connected/link'
 
 const Footer = () => {
   const filters = {
@@ -16,18 +16,14 @@ const Footer = () => {
   }
 
   const filterNodes = Object.keys(filters).map(filter => (
-    <LinkContainer
+    <Link
       filter={filter}
       key={uuid()}
       text={filters[filter]}
     />
   ))
 
-  return (
-    <p>
-      Show:{' '}{ join(filterNodes, ', ') }
-    </p>
-  )
+  return <p>Show:{' '}{ join(filterNodes, ', ') }</p>
 }
 
 export default Footer

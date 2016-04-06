@@ -1,22 +1,22 @@
 import React from 'react'
-import TodoFormContainer from '../containers/todo-form-container'
-import TodoListContainer from '../containers/todo-list-container'
-import Footer from './footer.jsx'
-import DevTools from './devtools.jsx'
+import TodoForm from './connected/todo-form'
+import TodoList from './connected/todo-list'
+import Footer from './composed/footer.jsx'
+import DevTools from './composed/devtools.jsx'
 
 export const DevRoot = () => (
-  <div className="react">
-    <TodoFormContainer />
-    <TodoListContainer />
+  <div>
+    <TodoForm />
+    <TodoList />
     <Footer />
     <DevTools />
   </div>
 )
 
 export const ProductionRoot = () => (
-  <div className="react">
-    <TodoFormContainer />
-    <TodoListContainer />
+  <div>
+    <TodoForm />
+    <TodoList />
     <Footer />
   </div>
 )
