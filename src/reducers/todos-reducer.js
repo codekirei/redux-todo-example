@@ -3,12 +3,20 @@ import {
   TOGGLE_TODO,
 } from '../constants/action-constants'
 import createReducer from '../utils/create-reducer'
-import todoReducer from './todo-reducer'
 
 const initialTodos = []
 
-export default (todos = initialTodos, action) =>
-  createReducer(todos, action.type, {
-    [ADD_TODO]: () => todos.concat(todoReducer(null, action)),
-    [TOGGLE_TODO]: () => todos.map(todo => todoReducer(todo, action)),
+export default (todos = initialTodos, { type, id, text }) =>
+  createReducer(todos, type, {
+    [ADD_TODO]: () => todos.concat({
+      id,
+      text,
+      key: id,
+      completed: false,
+    }),
+    [TOGGLE_TODO]: () => todos.map(todo =>
+      todo.id !== id
+        ? todo
+        : Object.assign({}, todo, { completed: !todo.completed })
+    ),
   })
