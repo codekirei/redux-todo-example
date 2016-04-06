@@ -7,6 +7,9 @@ export default connect(
     active: props.filter === state.filter,
   }),
   (dispatch, props) => ({
-    clickHandler: () => dispatch(setFilter(props.filter)),
+    clickHandler: event => {
+      event.preventDefault()
+      dispatch(setFilter(props.filter))
+    },
   })
 )(Link)

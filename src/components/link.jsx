@@ -1,15 +1,9 @@
 import React, { PropTypes as types } from 'react'
 
-const Link = ({ active, clickHandler, text }) => {
-  if (active) return <span>{text}</span>
-
-  const onClick = e => {
-    e.preventDefault()
-    clickHandler()
-  }
-
-  return <a href="#" onClick={onClick}>{text}</a>
-}
+const Link = ({ active, clickHandler, text }) =>
+  active
+    ? <span>{text}</span>
+    : <a href="#" onClick={clickHandler}>{text}</a>
 
 Link.propTypes = {
   active: types.bool.isRequired,
