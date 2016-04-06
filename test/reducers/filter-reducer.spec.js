@@ -5,11 +5,12 @@ import {
   SHOW_ACTIVE,
 } from '../../src/constants/filter-constants'
 import { setFilter } from '../../src/actions'
+import { forceDefault } from './utils'
 
 exports['filter-reducer'] = {
 
   'returns expected initial state': () =>
-    expect(reducer(undefined, { type: undefined })).to.equal(initialState),
+    expect(reducer(...forceDefault)).to.equal(initialState),
 
   'does not mutate state': () => {
     const state = SHOW_ALL

@@ -6,6 +6,7 @@ import {
   addTodo,
   toggleTodo,
 } from '../../src/actions'
+import { forceDefault } from './utils'
 
 // fixtures
 //----------------------------------------------------------
@@ -17,7 +18,7 @@ let addedTodo
 exports['todos-reducer'] = {
 
   'returns expected initial state': () =>
-    expect(reducer(undefined, { type: undefined })).to.deep.equal(initialState),
+    expect(reducer(...forceDefault)).to.deep.equal(initialState),
 
   addTodo: {
 
