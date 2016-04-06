@@ -8,22 +8,29 @@ import {
 import join from '../../utils/join'
 import Link from '../connected/link'
 
-const Footer = () => {
-  const filters = {
-    [SHOW_ALL]: 'All',
-    [SHOW_ACTIVE]: 'Active',
-    [SHOW_COMPLETED]: 'Completed',
-  }
+const filters = [
+  {
+    filter: SHOW_ALL,
+    text: 'All',
+  },
+  {
+    filter: SHOW_ACTIVE,
+    text: 'Active',
+  },
+  {
+    filter: SHOW_COMPLETED,
+    text: 'Completed',
+  },
+]
 
-  const filterNodes = Object.keys(filters).map(filter => (
-    <Link
-      filter={filter}
-      key={uuid()}
-      text={filters[filter]}
-    />
-  ))
+const links = filters.map(({ filter, text }) => (
+  <Link
+    filter={filter}
+    text={text}
+    key={uuid()}
+  />
+))
 
-  return <p>Show:{' '}{ join(filterNodes, ', ') }</p>
-}
+const Footer = () => <p>Show:{' '}{ join(links, ', ') }</p>
 
 export default Footer
