@@ -20,4 +20,4 @@ export const devStore = (state = initialState) => {
   return store
 }
 
-export const productionStore = (state = initialState) => createStore(reducer, state)
+export const prodStore = (state = initialState) => createStore(reducer, state)

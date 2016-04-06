@@ -15,5 +15,5 @@ const children = [
 export const DevRoot = () =>
   root.apply(null, children.concat(DevTools).map(createElement))
 
-export const ProductionRoot = () =>
+export const ProdRoot = () =>
   root.apply(null, children.map(createElement))
