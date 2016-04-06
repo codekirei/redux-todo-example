@@ -1,25 +1,26 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import { ProdRoot } from './components/root'
 import './styles/index.css'
-
-const rootEl = document.getElementById('root')
 
 const store = process.env.NODE_ENV === 'production'
   ? require('./store').prodStore()
   : require('./store').devStore()
 
-const prodRender = () =>
-  ReactDOM.render(<Provider store={store}><ProdRoot /></Provider>, rootEl)
+const rootEl = document.getElementById('root')
+const renderAsRoot = component =>
+  render(<Provider store={store}>{component}</Provider>, rootEl)
+
+const prodRender = () => renderAsRoot(<ProdRoot />)
 
 const devRender = () => {
   const DevRoot = require('./components/root').DevRoot
-  ReactDOM.render(<Provider store={store}><DevRoot /></Provider>, rootEl)
+  renderAsRoot(<DevRoot />)
 }
 
-const render = process.env.NODE_ENV === 'production' ? prodRender : devRender
+const renderer = process.env.NODE_ENV === 'production' ? prodRender : devRender
 
-if (module.hot) module.hot.accept('./components/root', () => setTimeout(render))
+if (module.hot) module.hot.accept('./components/root', () => setTimeout(renderer))
 
-render()
+renderer()

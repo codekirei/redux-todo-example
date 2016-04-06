@@ -1,5 +1,3 @@
-- figure out why components that have containers as children will not shallow render
-- store todo-form state in store
 - restructure logic so pure components do not have containers as children
   - see:
     https://egghead.io/lessons/react-building-stateless-function-components-new-in-react-0-14
