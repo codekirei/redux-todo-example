@@ -2,7 +2,7 @@ import { createStore, applyMiddleware, compose } from 'redux'
 import reducer from '../reducers'
 import DevTools from '../components/composed/devtools.jsx'
 
-const initialState = void 0
+export const initialState = void 0
 
 export const devStore = (state = initialState) => {
   const enhancer = compose(

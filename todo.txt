@@ -1,9 +1,3 @@
-- restructure logic so pure components do not have containers as children
-  - see:
-    https://egghead.io/lessons/react-building-stateless-function-components-new-in-react-0-14
-    redux todos / todos with undo / shopping cart examples
 - tests
-  - combined reducers
   - components
-  - containers
   - utils
