@@ -11,7 +11,7 @@ const todos = [
   { id: 2, completed: false },
 ]
 
-exports['filter-todos'] = {
+exports['utils/filter-todos'] = {
 
   [SHOW_ALL]: () => expect(filterTodos(todos, SHOW_ALL)).to.deep.equal(todos),
 

@@ -5,7 +5,7 @@ import {
   SHOW_ACTIVE,
   SHOW_COMPLETED,
 } from '../../constants/filter-constants'
-import join from '../../utils/join'
+import intersperse from '../../utils/intersperse'
 import Link from '../connected/link'
 
 const filters = [
@@ -31,6 +31,6 @@ const links = filters.map(({ filter, text }) => (
   />
 ))
 
-const Footer = () => <p>Show:{' '}{ join(links, ', ') }</p>
+const Footer = () => <p>Show:{' '}{ intersperse(links, ', ') }</p>
 
 export default Footer
