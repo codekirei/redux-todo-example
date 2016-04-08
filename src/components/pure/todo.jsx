@@ -1,16 +1,16 @@
 import React, { PropTypes as types } from 'react'
 
-const Todo = ({ handleClick, completed, text }) => (
+const Todo = ({ clickHandler, completed, text }) => (
   <li
     className={completed ? 'todo--completed' : ''}
-    onClick={handleClick}
+    onClick={clickHandler}
   >
     {text}
   </li>
 )
 
 Todo.propTypes = {
-  handleClick: types.func.isRequired,
+  clickHandler: types.func.isRequired,
   completed: types.bool.isRequired,
   text: types.string.isRequired,
 }

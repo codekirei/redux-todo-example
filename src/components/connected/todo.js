@@ -5,6 +5,6 @@ import Todo from '../pure/todo.jsx'
 export default connect(
   null,
   (dispatch, props) => ({
-    handleClick: () => dispatch(toggleTodo(props.id)),
+    clickHandler: () => dispatch(toggleTodo(props.id)),
   })
 )(Todo)
