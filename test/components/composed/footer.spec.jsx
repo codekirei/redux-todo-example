@@ -5,13 +5,11 @@ import { shallow } from 'enzyme'
 import chai, { expect } from 'chai'
 import chaiEnzyme from 'chai-enzyme'
 
-import Footer from '../../../src/components/composed/footer.jsx'
-import { prodStore } from '../../../src/store'
+// import Footer from '../../../src/components/composed/footer.jsx'
 
 // setup ---------------------------------------------------
 
-chai.use(chaiEnzyme())
-const store = prodStore()
+// chai.use(chaiEnzyme())
 // const output = shallow(<Footer />, { context: { store } })
 
 // cases ---------------------------------------------------
