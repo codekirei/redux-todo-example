@@ -1,5 +1,2 @@
-- upgrade to react 15
-- drop enzyme -> use native react test utils
-  - http://rvcode.com/scripting%20languages/2016/01/01/testing-react-isomorphic-components.html
 - tests
-  - components
+- look into replacing jsdom with cheerio for prod build

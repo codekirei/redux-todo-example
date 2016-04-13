@@ -1,7 +1,7 @@
 import React, { PropTypes as types } from 'react'
 
 const TodoForm = ({ handleSubmit, handleInput, text }) => (
-  <form onSubmit={handleSubmit(text)}>
+  <form onSubmit={e => handleSubmit(text, e)}>
     <input
       type="text"
       value={text}

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import filterTodos from '../utils/filter-todos'
+import { filterTodos } from '.'
 import TodoList from '../components/todo-list.jsx'
 
 export default connect(

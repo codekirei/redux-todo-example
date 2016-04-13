@@ -6,7 +6,7 @@ import {
   SHOW_COMPLETED,
 } from '../constants/filter-constants'
 import intersperse from '../utils/intersperse'
-import Link from '../connectors/link'
+import Link from '../connectors/link-connector'
 
 const filters = [
   {
