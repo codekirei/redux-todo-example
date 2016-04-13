@@ -31,7 +31,7 @@ exports['<Todo />'] = {
     defaultOutput = render().output
   },
 
-  'is <li>': () => {
+  'is a <li>': () => {
     expect(defaultOutput.type).to.equal('li')
   },
 

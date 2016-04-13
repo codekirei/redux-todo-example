@@ -12,12 +12,10 @@ const TodoForm = ({ handleSubmit }) => {
   }
 
   return (
-    <div>
-      <form onSubmit={onSubmit} >
-        <input ref={storeInput} />
-        <button type="submit">Add Todo</button>
-      </form>
-    </div>
+    <form onSubmit={onSubmit} >
+      <input ref={storeInput} />
+      <button type="submit">Add Todo</button>
+    </form>
   )
 }
 
