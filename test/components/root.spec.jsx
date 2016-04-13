@@ -1,7 +1,5 @@
 import React from 'react'
-import { shallow } from 'enzyme'
-import chai, { expect } from 'chai'
-import chaiEnzyme from 'chai-enzyme'
+import { expect } from 'chai'
 
 // import { DevRoot, ProductionRoot } from '../../src/components/link.jsx'
 // import Footer from '../../src/components/footer.jsx'

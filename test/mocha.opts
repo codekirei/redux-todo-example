@@ -1,5 +1,4 @@
 --require babel-register
---require scripts/jsdom
 --require ignore-styles
 --ui exports
 --reporter mocha-tldr-reporter
