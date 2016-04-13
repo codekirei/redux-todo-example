@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware, compose } from 'redux'
 import reducer from '../reducers'
-import DevTools from '../components/composed/devtools.jsx'
+import DevTools from '../components/devtools.jsx'
 
 export const initialState = void 0
 

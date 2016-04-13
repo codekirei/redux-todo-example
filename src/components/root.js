@@ -1,8 +1,8 @@
 import { createElement } from 'react'
-import TodoForm from './connected/todo-form'
-import TodoList from './connected/todo-list'
-import Footer from './composed/footer.jsx'
-import DevTools from './composed/devtools.jsx'
+import TodoForm from '../connectors/todo-form'
+import TodoList from '../connectors/todo-list'
+import Footer from './footer.jsx'
+import DevTools from './devtools.jsx'
 
 const root = (...children) => createElement('div', { className: 'react' }, ...children)
 

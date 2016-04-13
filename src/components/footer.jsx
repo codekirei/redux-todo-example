@@ -4,9 +4,9 @@ import {
   SHOW_ALL,
   SHOW_ACTIVE,
   SHOW_COMPLETED,
-} from '../../constants/filter-constants'
-import intersperse from '../../utils/intersperse'
-import Link from '../connected/link'
+} from '../constants/filter-constants'
+import intersperse from '../utils/intersperse'
+import Link from '../connectors/link'
 
 const filters = [
   {

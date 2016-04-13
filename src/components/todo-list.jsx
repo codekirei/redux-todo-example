@@ -1,5 +1,5 @@
 import React, { PropTypes as types } from 'react'
-import Todo from '../connected/todo'
+import Todo from '../connectors/todo'
 
 const TodoList = ({ todos }) => (
   <ul>
