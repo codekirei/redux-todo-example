@@ -44,7 +44,7 @@ exports['<TodoForm />'] = {
   'does not fire props.handleSubmit if input is blank': () => {
     const spy = sinon.spy()
     const { output } = render({ handleSubmit: spy })
-    // output.props.onSubmit()
+    output.props.onSubmit({ preventDefault() {} })
     expect(spy.called).to.equal(false)
     // const form = findTag(output, 'form')
     // console.log(form)

@@ -1,26 +1,20 @@
 import React, { PropTypes as types } from 'react'
 
-const TodoForm = ({ handleSubmit }) => {
-  let input
-  const storeInput = node => { input = node }
-
-  const onSubmit = e => {
-    e.preventDefault()
-    if (!input.value.trim()) return
-    handleSubmit(input.value)
-    input.value = ''
-  }
-
-  return (
-    <form onSubmit={onSubmit} >
-      <input ref={storeInput} />
-      <button type="submit">Add Todo</button>
-    </form>
-  )
-}
+const TodoForm = ({ handleSubmit, handleInput, text }) => (
+  <form onSubmit={handleSubmit(text)}>
+    <input
+      type="text"
+      value={text}
+      onChange={handleInput}
+    />
+    <button type="submit">Add Todo</button>
+  </form>
+)
 
 TodoForm.propTypes = {
   handleSubmit: types.func.isRequired,
+  handleInput: types.func.isRequired,
+  text: types.string.isRequired,
 }
 
 export default TodoForm

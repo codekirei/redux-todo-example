@@ -1,5 +1,8 @@
 import { jsdom } from 'jsdom'
 
-global.document = jsdom('')
-global.window = document.defaultView
+const document = jsdom('')
+const window = document.defaultView
+
+global.document = document
+global.window = window
 global.navigator = { userAgent: 'node.js' }
