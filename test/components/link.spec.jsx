@@ -4,12 +4,10 @@ import React from 'react'
 import sinon from 'sinon'
 import { expect } from 'chai'
 
+import shallowRender from '../test-utils/shallow-render'
 import Link from '../../src/components/link.jsx'
-import assignProps from '../test-utils/assign-props'
 
 // prep ------------------------------------------------------------------------
-
-let defaultOutput
 
 const defaultProps = {
   active: false,
@@ -17,28 +15,40 @@ const defaultProps = {
   text: 'foo',
 }
 
-const props = assignProps(defaultProps)
+let defaultOutput
+
+const render = overrides => {
+  const props = Object.assign({}, defaultProps, overrides)
+  const output = shallowRender(<Link {...props} />)
+  return { props, output }
+}
 
 // cases -----------------------------------------------------------------------
 
-// exports['<Link />'] = {
-//
-//   before: () => { defaultOutput = shallow(<Link {...props()} />) },
-//
-//   'is <a> if props.active === false': () => expect(defaultOutput).to.have.tagName('a'),
-//
-//   'is <span> if props.active === true': () => {
-//     const output = shallow(<Link {...props({ active: true })} />)
-//     expect(output).to.have.tagName('span')
-//   },
-//
-//   'receives props.text': () => expect(defaultOutput).to.have.text(defaultProps.text),
-//
-//   'handles clicks with props.clickHandler': () => {
-//     const spy = sinon.spy()
-//     const output = shallow(<Link {...props({ clickHandler: spy })} />)
-//     output.find('a').simulate('click')
-//     expect(spy.called).to.equal(true)
-//   },
-//
-// }
+exports['<Link />'] = {
+
+  before: () => {
+    defaultOutput = render().output
+  },
+
+  'is <a> if props.active === false': () => {
+    expect(defaultOutput.type).to.equal('a')
+  },
+
+  'is <span> if props.active === true': () => {
+    const { output } = render({ active: true })
+    expect(output.type).to.equal('span')
+  },
+
+  'receives props.text': () => {
+    expect(defaultOutput.props.children).to.equal(defaultProps.text)
+  },
+
+  'handles clicks with props.clickHandler': () => {
+    const spy = sinon.spy()
+    const { output } = render({ clickHandler: spy })
+    output.props.onClick()
+    expect(spy.called).to.equal(true)
+  },
+
+}
