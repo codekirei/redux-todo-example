@@ -2,7 +2,7 @@ import { expect } from 'chai'
 import reducer from '../../src/reducers'
 import { initialState as filter } from '../../src/reducers/filter-reducer'
 import { initialState as todos } from '../../src/reducers/todos-reducer'
-import { forceDefault } from './utils'
+import forceDefault from '../test-utils/force-default-reducer'
 
 exports['combined-reducers'] = {
 

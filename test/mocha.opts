@@ -2,5 +2,5 @@
 --require scripts/jsdom
 --require ignore-styles
 --ui exports
---recursive test/**/*.spec.js?(x)
 --reporter mocha-tldr-reporter
+test/**/*.spec.js?(x)

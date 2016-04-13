@@ -5,7 +5,7 @@ import {
   SHOW_ACTIVE,
 } from '../../src/constants/filter-constants'
 import { setFilter } from '../../src/actions'
-import { forceDefault } from './utils'
+import forceDefault from '../test-utils/force-default-reducer'
 
 exports['filter-reducer'] = {
 

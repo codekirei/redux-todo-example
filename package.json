@@ -20,7 +20,7 @@
     "lint:styles": "stylelint --config configs/stylelint.yml 'src/styles/**/*.css'",
     "lint:scripts": "eslint 'src/**/*.js?(x)' 'scripts/**/*.js'",
     "dev": "chokidar 'src/**/*.{js,jsx,html}' -c 'clear && npm-run-all lint test'",
-    "dev:test": "chokidar 'test/**/*.{js,jsx}' -c 'clear && npm test'"
+    "dev:test": "chokidar 'src/**/*.{js,jsx,html}' 'test/**/*.{js,jsx}' -c 'clear && npm test'"
   },
   "author": "Jacob Blakely (codekirei)",
   "license": "MIT",
@@ -34,11 +34,9 @@
     "babel-register": "6.6.0",
     "browser-sync": "2.11.2",
     "chai": "3.5.0",
-    "chai-enzyme": "0.4.1",
     "chokidar-cli": "1.2.0",
     "clear-cli": "1.0.1",
     "css-loader": "0.23.1",
-    "enzyme": "2.2.0",
     "eslint": "2.4.0",
     "eslint-config-airbnb": "6.0.2",
     "eslint-plugin-react": "4.1.0",

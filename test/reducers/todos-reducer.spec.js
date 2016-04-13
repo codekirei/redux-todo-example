@@ -1,20 +1,20 @@
-// modules
-//----------------------------------------------------------
+// modules ---------------------------------------------------------------------
+
 import { expect } from 'chai'
 import reducer, { initialState } from '../../src/reducers/todos-reducer'
 import {
   addTodo,
   toggleTodo,
 } from '../../src/actions'
-import { forceDefault } from './utils'
+import forceDefault from '../test-utils/force-default-reducer'
 
-// fixtures
-//----------------------------------------------------------
+// setup -----------------------------------------------------------------------
+
 const text = 'foo'
 let addedTodo
 
-// cases
-//----------------------------------------------------------
+// cases -----------------------------------------------------------------------
+
 exports['todos-reducer'] = {
 
   'returns expected initial state': () =>
@@ -35,6 +35,7 @@ exports['todos-reducer'] = {
       text: () => expect(addedTodo.text).to.equal(text),
       completed: () => expect(addedTodo.completed).to.be.false,
     },
+
   },
 
   toggleTodo: {
@@ -62,4 +63,5 @@ exports['todos-reducer'] = {
     },
 
   },
+
 }
