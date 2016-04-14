@@ -6,7 +6,7 @@ const shallowRender = (Component, defaultProps) => overrideProps => {
   const renderer = createRenderer()
   renderer.render(createElement(Component, { ...props }))
   const output = renderer.getRenderOutput()
-  return { props, renderer, output }
+  return { props, output }
 }
 
 export default shallowRender

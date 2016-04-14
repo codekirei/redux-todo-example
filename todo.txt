@@ -1,3 +1,7 @@
 - tests
+  - components
+    - root
+    - footer
+    - devtools
 - turn shallowRender into a module
 - look into replacing jsdom with cheerio for prod build
