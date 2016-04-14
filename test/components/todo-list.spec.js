@@ -3,6 +3,7 @@
 import { expect } from 'chai'
 
 import shallowRender from '../test-utils/shallow-render'
+import nameOf from '../test-utils/name-of'
 import TodoList from '../../src/components/todo-list.jsx'
 
 // prep ------------------------------------------------------------------------
@@ -36,11 +37,11 @@ exports['<TodoList />'] = {
     const oneTodo = render({ todos }).output.props.children
     expect(oneTodo.length).to.equal(1)
     expect(oneTodo[0].props.text).to.equal(firstTodo.text)
+    expect(nameOf(oneTodo[0])).to.equal('Todo')
 
     todos.push(secondTodo)
     const twoTodos = render({ todos }).output.props.children
     expect(twoTodos.length).to.equal(2)
-    expect(twoTodos[1].props.text).to.equal(secondTodo.text)
   },
 
 }

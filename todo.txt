@@ -2,5 +2,6 @@
   - components
     - root
     - devtools
+  - fill in gaps in coverage
 - turn shallowRender into a module
 - look into replacing jsdom with cheerio for prod build

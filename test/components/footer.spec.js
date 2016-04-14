@@ -3,7 +3,7 @@
 import { expect } from 'chai'
 
 import shallowRender from '../test-utils/shallow-render'
-import connectedComponent from '../test-utils/connected-component'
+import nameOf from '../test-utils/name-of'
 import Footer, { separator, filters } from '../../src/components/footer.jsx'
 
 // setup -----------------------------------------------------------------------
@@ -27,7 +27,7 @@ exports['<Footer />'] = {
   'has 3 links as children': () => {
     const links = defaultOutput.props.children[2].filter(child => child !== separator)
     expect(links.length).to.equal(3)
-    expect(links.every(link => connectedComponent(link) === 'Link')).to.equal(true)
+    expect(links.every(link => nameOf(link) === 'Link')).to.equal(true)
     filters.forEach(({ text }, i) => expect(links[i].props.text).to.equal(text))
   },
 
