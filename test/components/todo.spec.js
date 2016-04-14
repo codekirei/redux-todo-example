@@ -1,47 +1,46 @@
 // modules ---------------------------------------------------------------------
 
-import React from 'react'
 import sinon from 'sinon'
 import { expect } from 'chai'
 
 import shallowRender from '../test-utils/shallow-render'
-import Link from '../../src/components/link.jsx'
+import Todo from '../../src/components/todo.jsx'
 
 // prep ------------------------------------------------------------------------
 
 const defaultProps = {
-  active: false,
+  completed: false,
   clickHandler: () => {},
   text: 'foo',
 }
 
 let defaultOutput
 
-const render = overrides => {
-  const props = Object.assign({}, defaultProps, overrides)
-  const output = shallowRender(<Link {...props} />)
-  return { props, output }
-}
+const render = shallowRender(Todo, defaultProps)
 
 // cases -----------------------------------------------------------------------
 
-exports['<Link />'] = {
+exports['<Todo />'] = {
 
   before: () => {
     defaultOutput = render().output
   },
 
-  'is <a> if props.active === false': () => {
-    expect(defaultOutput.type).to.equal('a')
-  },
-
-  'is <span> if props.active === true': () => {
-    const { output } = render({ active: true })
-    expect(output.type).to.equal('span')
+  'is a <li>': () => {
+    expect(defaultOutput.type).to.equal('li')
   },
 
   'receives props.text': () => {
     expect(defaultOutput.props.children).to.equal(defaultProps.text)
+  },
+
+  'has no className when not completed': () => {
+    expect(defaultOutput.props.className).to.equal('')
+  },
+
+  'has className todo--completed when completed': () => {
+    const { output } = render({ completed: true })
+    expect(output.props.className).to.equal('todo--completed')
   },
 
   'handles clicks with props.clickHandler': () => {

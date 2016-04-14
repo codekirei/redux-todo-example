@@ -1,6 +1,5 @@
 // modules ---------------------------------------------------------------------
 
-import React from 'react'
 import sinon from 'sinon'
 import { expect } from 'chai'
 
@@ -17,11 +16,7 @@ const defaultProps = {
 
 let defaultOutput
 
-const render = overrides => {
-  const props = Object.assign({}, defaultProps, overrides)
-  const output = shallowRender(<TodoForm {...props} />)
-  return { props, output }
-}
+const render = shallowRender(TodoForm, defaultProps)
 
 // cases -----------------------------------------------------------------------
 
