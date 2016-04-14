@@ -53,8 +53,12 @@ exports['<TodoForm />'] = {
     expect(spy.calledWith(text)).to.equal(true)
   },
 
-  'calls props.handleInput on change': () => {
-    expect(true).to.equal(false)
+  'calls props.handleInput on input onChange event': () => {
+    const spy = sinon.spy()
+    const { output } = render({ handleInput: spy })
+    const [input] = output.props.children
+    input.props.onChange()
+    expect(spy.called).to.equal(true)
   },
 
 }
