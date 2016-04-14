@@ -8,7 +8,9 @@ import {
 import intersperse from '../utils/intersperse'
 import Link from '../connectors/link-connector'
 
-const filters = [
+export const separator = ', '
+
+export const filters = [
   {
     filter: SHOW_ALL,
     text: 'All',
@@ -31,6 +33,6 @@ const links = filters.map(({ filter, text }) => (
   />
 ))
 
-const Footer = () => <p>Show:{' '}{ intersperse(links, ', ') }</p>
+const Footer = () => <p>Show:{' '}{ intersperse(links, separator) }</p>
 
 export default Footer

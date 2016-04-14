@@ -1,42 +1,34 @@
-// modules -------------------------------------------------
+// modules ---------------------------------------------------------------------
 
-import React from 'react'
-import { Provider } from 'react-redux'
-import { createStore } from 'redux'
 import { expect } from 'chai'
 
-import Footer from '../../src/components/footer.jsx'
-// import Link from '../../../src/components/connected/link'
-// import reducer from '../../../src/reducers'
+import shallowRender from '../test-utils/shallow-render'
+import connectedComponent from '../test-utils/connected-component'
+import Footer, { separator, filters } from '../../src/components/footer.jsx'
 
-// setup ---------------------------------------------------
+// setup -----------------------------------------------------------------------
 
-// const store = createStore(reducer)
+let defaultOutput
 
-let output
+const render = shallowRender(Footer)
 
-// cases ---------------------------------------------------
+// cases -----------------------------------------------------------------------
 
-// exports['<Footer />'] = {
-//
-//   before: () => {
-//     output = mount(
-//       <Provider store={store}>
-//         <Footer />
-//       </Provider>
-//     )
-//   },
-//
-//   'is a <p>': () => {
-//     expect(output).to.have.tagName('p')
-//   },
-//
-//   'contains Show:': () => {
-//     console.log(output.children())
-//   },
-//
-//   'contains 2 <a>s': () => {
-//     expect(output.find('a').length).to.equal(2)
-//   },
-//
-// }
+exports['<Footer />'] = {
+
+  before: () => {
+    defaultOutput = render().output
+  },
+
+  'is <p>': () => {
+    expect(defaultOutput.type).to.equal('p')
+  },
+
+  'has 3 links as children': () => {
+    const links = defaultOutput.props.children[2].filter(child => child !== separator)
+    expect(links.length).to.equal(3)
+    expect(links.every(link => connectedComponent(link) === 'Link')).to.equal(true)
+    filters.forEach(({ text }, i) => expect(links[i].props.text).to.equal(text))
+  },
+
+}
