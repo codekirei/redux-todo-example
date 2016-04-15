@@ -20,7 +20,7 @@
     "lint:styles": "stylelint --config configs/stylelint.yml 'src/styles/**/*.css'",
     "lint:scripts": "eslint 'src/**/*.js?(x)' 'scripts/**/*.js'",
     "dev": "chokidar 'src/**/*.{js,jsx,html}' -c 'clear && npm-run-all lint test'",
-    "dev:test": "chokidar 'src/**/*.{js,jsx,html}' 'test/**/*.{js,jsx}' -c 'clear && npm test'"
+    "dev:test": "chokidar 'src/**/*.{js,jsx,html}' 'test/**/*.{js,jsx}' -c 'clear && npm run cover'"
   },
   "author": "Jacob Blakely (codekirei)",
   "license": "MIT",
