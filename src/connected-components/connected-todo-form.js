@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import { setInput } from '../actions'
 import TodoForm from '../components/todo-form.jsx'
-import { submitHandler } from '.'
+import { submitHandler } from '../connectors/todo-form-connectors'
 
 export default connect(
   state => ({

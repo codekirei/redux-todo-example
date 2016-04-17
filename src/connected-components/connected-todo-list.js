@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
-import { filterTodos } from '.'
 import TodoList from '../components/todo-list.jsx'
+import { filterTodos } from '../connectors/todo-list-connectors'
 
 export default connect(
   state => ({

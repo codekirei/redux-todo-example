@@ -1,6 +1,6 @@
 import { createElement } from 'react'
-import TodoForm from '../connectors/todo-form-connector'
-import TodoList from '../connectors/todo-list-connector'
+import TodoForm from '../connected-components/connected-todo-form'
+import TodoList from '../connected-components/connected-todo-list'
 import Footer from './footer.jsx'
 import DevTools from './devtools.jsx'
 

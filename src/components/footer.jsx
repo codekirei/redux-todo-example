@@ -6,7 +6,7 @@ import {
   SHOW_COMPLETED,
 } from '../constants/filter-constants'
 import intersperse from '../utils/intersperse'
-import Link from '../connectors/link-connector'
+import Link from '../connected-components/connected-link'
 
 export const separator = ', '
 
