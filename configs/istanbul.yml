@@ -1,5 +1,9 @@
 instrumentation:
-  excludes: ['*-test.*', 'scripts/*', 'configs/*']
+  excludes:
+    - '*-test.*'
+    - 'scripts/*'
+    - 'configs/*'
+    - 'src/connected-components/*'
   extensions:
     - .js
     - .jsx

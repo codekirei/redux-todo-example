@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 import { spy } from 'sinon'
-import { submitHandler } from '../../src/connectors'
+import { submitHandler } from '../../src/connectors/todo-form-connectors'
 import { addTodo } from '../../src/actions'
 
 exports.submitHandler = {

@@ -1,5 +1,5 @@
 import { expect } from 'chai'
-import { filterTodos } from '../../src/connectors'
+import { filterTodos } from '../../src/connectors/todo-list-connectors'
 import {
   SHOW_ALL,
   SHOW_COMPLETED,
