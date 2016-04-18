@@ -18,7 +18,7 @@
     "serve:build": "browser-sync start --server dist --no-open",
     "lint": "npm-run-all lint:styles lint:scripts",
     "lint:styles": "stylelint --config configs/stylelint.yml 'src/styles/**/*.css'",
-    "lint:scripts": "eslint 'src/**/*.js?(x)' 'scripts/**/*.js'",
+    "lint:scripts": "eslint '{src,scripts,test}/**/*.js?(x)'",
     "dev": "chokidar 'src/**/*.{js,jsx,html}' -c 'clear && npm-run-all lint test'",
     "dev:test": "chokidar 'src/**/*.{js,jsx,html}' 'test/**/*.{js,jsx}' -c 'clear && npm run cover'"
   },
@@ -39,6 +39,7 @@
     "css-loader": "0.23.1",
     "eslint": "2.7.0",
     "eslint-config-airbnb": "7.0.0",
+    "eslint-plugin-jsx-a11y": "0.6.2",
     "eslint-plugin-react": "4.3.0",
     "extract-text-webpack-plugin": "1.0.1",
     "html-minifier": "1.5.0",

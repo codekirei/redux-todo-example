@@ -1,12 +1,20 @@
-// modules ---------------------------------------------------------------------
+// modules - node --------------------------------------------------------------
+
+import { equal, ok } from 'assert'
+
+// modules - npm ---------------------------------------------------------------
 
 import sinon from 'sinon'
-import { expect } from 'chai'
 
-import shallowRender from '../test-utils/shallow-render'
+// modules - local -------------------------------------------------------------
+
 import TodoForm from '../../src/components/todo-form.jsx'
 
-// prep ------------------------------------------------------------------------
+// modules - test utils --------------------------------------------------------
+
+import shallowRender from '../test-utils/shallow-render'
+
+// setup -----------------------------------------------------------------------
 
 const defaultProps = {
   handleSubmit: () => {},
@@ -14,30 +22,35 @@ const defaultProps = {
   text: '',
 }
 
-let defaultOutput
-
 const render = shallowRender(TodoForm, defaultProps)
+
+let defaultOutput
 
 // cases -----------------------------------------------------------------------
 
-exports['<TodoForm />'] = {
+exports['COMPONENT: TodoForm:'] = {
 
   before: () => {
     defaultOutput = render().output
   },
 
   'renders tree': () => {
-    expect(defaultOutput.type).to.equal('form')
+    equal(defaultOutput.type, 'form')
 
     const [input, button] = defaultOutput.props.children
 
-    expect(input.type).to.equal('input')
-    expect(input.props.type).to.equal('text')
-    expect(input.props.value).to.equal('')
+    const childCases = [
+      // input
+      ['input.type', input.type, 'input'],
+      ['input.props.type', input.props.type, 'text'],
+      ['input.props.value', input.props.value, ''],
+      // button
+      ['button.type', button.type, 'button'],
+      ['button.props.type', button.props.type, 'submit'],
+      ['button.props.children', button.props.children, 'Add Todo'],
+    ]
 
-    expect(button.type).to.equal('button')
-    expect(button.props.type).to.equal('submit')
-    expect(button.props.children).to.equal('Add Todo')
+    childCases.forEach(([m, a, e]) => equal(a, e, m))
   },
 
   'calls props.handleSubmit with props.text': () => {
@@ -45,7 +58,7 @@ exports['<TodoForm />'] = {
     const text = 'foo'
     const { output } = render({ text, handleSubmit: spy })
     output.props.onSubmit()
-    expect(spy.calledWith(text)).to.equal(true)
+    ok(spy.calledWith(text))
   },
 
   'calls props.handleInput on input onChange event': () => {
@@ -53,7 +66,7 @@ exports['<TodoForm />'] = {
     const { output } = render({ handleInput: spy })
     const [input] = output.props.children
     input.props.onChange()
-    expect(spy.called).to.equal(true)
+    ok(spy.called)
   },
 
 }

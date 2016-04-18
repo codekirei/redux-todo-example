@@ -1,29 +1,36 @@
-// modules ---------------------------------------------------------------------
+// modules - node --------------------------------------------------------------
 
-import { expect } from 'chai'
+import { equal } from 'assert'
 
-import shallowRender from '../test-utils/shallow-render'
-import nameOf from '../test-utils/name-of'
+// modules - local -------------------------------------------------------------
+
 import { DevRoot, ProdRoot } from '../../src/components/root'
+
+// modules - test utils --------------------------------------------------------
+
+import nameOf from '../test-utils/name-of'
+import shallowRender from '../test-utils/shallow-render'
 
 // cases -----------------------------------------------------------------------
 
-exports['<Root />'] = {
+exports['COMPONENT: Root:'] = {
 
-  '<DevRoot />': () => {
-    const devRoot = shallowRender(DevRoot)().output
-    expect(devRoot.type).to.equal('div')
-    expect(devRoot.props.children.length).to.equal(4)
-    const [todoForm, todoList, footer, devTools] = devRoot.props.children
-    expect(nameOf(todoForm)).to.equal('TodoForm')
-    expect(nameOf(todoList)).to.equal('TodoList')
-    expect(nameOf(footer)).to.equal('Footer')
-    expect(nameOf(devTools)).to.equal('DevTools')
+  'DevRoot contains expected children': () => {
+    const { output } = shallowRender(DevRoot)()
+    equal(output.type, 'div')
+    equal(output.props.children.length, 4)
+    const children = [
+      'TodoForm',
+      'TodoList',
+      'Footer',
+      'DevTools',
+    ]
+    output.props.children.forEach((child, i) => equal(nameOf(child), children[i]))
   },
 
-  '<ProdRoot />': () => {
-    const prodRoot = shallowRender(ProdRoot)().output
-    expect(prodRoot.props.children.length).to.equal(3)
+  'ProdRoot contains expected children': () => {
+    const { output } = shallowRender(ProdRoot)()
+    equal(output.props.children.length, 3)
   },
 
 }

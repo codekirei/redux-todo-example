@@ -1,47 +1,73 @@
-// modules ---------------------------------------------------------------------
+// modules - node --------------------------------------------------------------
 
-import { expect } from 'chai'
+import { equal } from 'assert'
+
+// modules - local -------------------------------------------------------------
+
+import TodoList from '../../src/components/todo-list.jsx'
+
+// modules - test utils --------------------------------------------------------
 
 import shallowRender from '../test-utils/shallow-render'
 import nameOf from '../test-utils/name-of'
-import TodoList from '../../src/components/todo-list.jsx'
 
-// prep ------------------------------------------------------------------------
+// setup -----------------------------------------------------------------------
 
 const defaultProps = {
   todos: [],
 }
 
-let defaultOutput
-
 const render = shallowRender(TodoList, defaultProps)
+
+let defaultOutput
 
 // cases -----------------------------------------------------------------------
 
-exports['<TodoList />'] = {
+exports['COMPONENT: TodoList:'] = {
 
   before: () => {
     defaultOutput = render().output
   },
 
   'is <ul>': () => {
-    expect(defaultOutput.type).to.equal('ul')
+    equal(defaultOutput.type, 'ul')
   },
 
   'contains todos': () => {
-    const todos = []
     const firstTodo = { key: 1, text: 'foo' }
     const secondTodo = { key: 2, text: 'bar' }
+    const oneTodo = render({ todos: [firstTodo] }).output.props.children
+    const twoTodos = render({ todos: [firstTodo, secondTodo] }).output.props.children
 
-    todos.push(firstTodo)
-    const oneTodo = render({ todos }).output.props.children
-    expect(oneTodo.length).to.equal(1)
-    expect(oneTodo[0].props.text).to.equal(firstTodo.text)
-    expect(nameOf(oneTodo[0])).to.equal('Todo')
+    const cases = [
+      {
+        actual: oneTodo.length,
+        expected: 1,
+        message: 'oneTodo.length',
+      },
+      {
+        actual: twoTodos.length,
+        expected: 2,
+        message: 'twoTodos.length',
+      },
+      {
+        actual: oneTodo[0].props.text,
+        expected: firstTodo.text,
+        message: 'firstTodo.text',
+      },
+      {
+        actual: twoTodos[1].props.text,
+        expected: secondTodo.text,
+        message: 'secondTodo.text',
+      },
+      {
+        actual: nameOf(oneTodo[0]),
+        expected: 'Todo',
+        message: 'nameOf Todo',
+      },
+    ]
 
-    todos.push(secondTodo)
-    const twoTodos = render({ todos }).output.props.children
-    expect(twoTodos.length).to.equal(2)
+    cases.forEach(({ actual, expected, message }) => equal(actual, expected, message))
   },
 
 }

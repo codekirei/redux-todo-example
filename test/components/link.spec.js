@@ -1,12 +1,20 @@
-// modules ---------------------------------------------------------------------
+// modules - node --------------------------------------------------------------
+
+import { equal, ok } from 'assert'
+
+// modules - npm ---------------------------------------------------------------
 
 import sinon from 'sinon'
-import { expect } from 'chai'
 
-import shallowRender from '../test-utils/shallow-render'
+// modules - local -------------------------------------------------------------
+
 import Link from '../../src/components/link.jsx'
 
-// prep ------------------------------------------------------------------------
+// modules - test utils --------------------------------------------------------
+
+import shallowRender from '../test-utils/shallow-render'
+
+// setup -----------------------------------------------------------------------
 
 const defaultProps = {
   active: false,
@@ -14,36 +22,36 @@ const defaultProps = {
   text: 'foo',
 }
 
-let defaultOutput
-
 const render = shallowRender(Link, defaultProps)
+
+let defaultOutput
 
 // cases -----------------------------------------------------------------------
 
-exports['<Link />'] = {
+exports['COMPONENT: Link:'] = {
 
   before: () => {
     defaultOutput = render().output
   },
 
   'is <a> if props.active === false': () => {
-    expect(defaultOutput.type).to.equal('a')
+    equal(defaultOutput.type, 'a')
   },
 
   'is <span> if props.active === true': () => {
     const { output } = render({ active: true })
-    expect(output.type).to.equal('span')
+    equal(output.type, 'span')
   },
 
   'receives props.text': () => {
-    expect(defaultOutput.props.children).to.equal(defaultProps.text)
+    equal(defaultOutput.props.children, defaultProps.text)
   },
 
   'handles clicks with props.clickHandler': () => {
     const spy = sinon.spy()
     const { output } = render({ clickHandler: spy })
     output.props.onClick()
-    expect(spy.called).to.equal(true)
+    ok(spy.called)
   },
 
 }

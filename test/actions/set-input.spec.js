@@ -14,7 +14,7 @@ let action
 
 // cases -----------------------------------------------------------------------
 
-exports['ACTION: setInput: '] = {
+exports['ACTION: setInput:'] = {
 
   before: () => {
     action = setInput(text)

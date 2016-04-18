@@ -15,7 +15,7 @@ let action
 
 // cases -----------------------------------------------------------------------
 
-exports['ACTION: addTodo: '] = {
+exports['ACTION: addTodo:'] = {
 
   before: () => {
     action = addTodo(text)

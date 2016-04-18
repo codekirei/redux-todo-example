@@ -15,7 +15,7 @@ let action
 
 // cases -----------------------------------------------------------------------
 
-exports['ACTION: toggleTodo: '] = {
+exports['ACTION: toggleTodo:'] = {
 
   before: () => {
     action = toggleTodo(id)

@@ -15,7 +15,7 @@ let action
 
 // cases -----------------------------------------------------------------------
 
-exports['ACTION: setFilter: '] = {
+exports['ACTION: setFilter:'] = {
 
   before: () => {
     action = setFilter(filter)
