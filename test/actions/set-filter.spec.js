@@ -1,11 +1,32 @@
+// modules - node --------------------------------------------------------------
+
+import { equal } from 'assert'
+
+// modules - local -------------------------------------------------------------
+
 import { SET_FILTER } from '../../src/constants/action-constants'
 import { setFilter } from '../../src/actions'
-import { expect } from 'chai'
+
+// setup -----------------------------------------------------------------------
 
 const filter = 'foo'
-const action = setFilter(filter)
 
-exports.setFilter = {
-  type: () => expect(action.type).to.equal(SET_FILTER),
-  filter: () => expect(action.filter).to.equal(filter),
+let action
+
+// cases -----------------------------------------------------------------------
+
+exports['ACTION: setFilter: '] = {
+
+  before: () => {
+    action = setFilter(filter)
+  },
+
+  type: () => {
+    equal(action.type, SET_FILTER)
+  },
+
+  filter: () => {
+    equal(action.filter, filter)
+  },
+
 }

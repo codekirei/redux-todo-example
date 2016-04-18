@@ -1,11 +1,32 @@
+// modules - node --------------------------------------------------------------
+
+import { equal } from 'assert'
+
+// modules - local -------------------------------------------------------------
+
 import { TOGGLE_TODO } from '../../src/constants/action-constants'
 import { toggleTodo } from '../../src/actions'
-import { expect } from 'chai'
+
+// setup -----------------------------------------------------------------------
 
 const id = 'foo'
-const action = toggleTodo(id)
 
-exports.toggleTodo = {
-  type: () => expect(action.type).to.equal(TOGGLE_TODO),
-  id: () => expect(action.id).to.equal(id),
+let action
+
+// cases -----------------------------------------------------------------------
+
+exports['ACTION: toggleTodo: '] = {
+
+  before: () => {
+    action = toggleTodo(id)
+  },
+
+  type: () => {
+    equal(action.type, TOGGLE_TODO)
+  },
+
+  id: () => {
+    equal(action.id, id)
+  },
+
 }

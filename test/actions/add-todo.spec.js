@@ -1,12 +1,36 @@
+// modules - node --------------------------------------------------------------
+
+import { equal } from 'assert'
+
+// modules - local -------------------------------------------------------------
+
 import { ADD_TODO } from '../../src/constants/action-constants'
 import { addTodo } from '../../src/actions'
-import { expect } from 'chai'
+
+// setup -----------------------------------------------------------------------
 
 const text = 'foo'
-const action = addTodo(text)
 
-exports.addTodo = {
-  type: () => expect(action.type).to.equal(ADD_TODO),
-  id: () => expect(action.id).to.be.a('string'),
-  text: () => expect(action.text).to.equal(text),
+let action
+
+// cases -----------------------------------------------------------------------
+
+exports['ACTION: addTodo: '] = {
+
+  before: () => {
+    action = addTodo(text)
+  },
+
+  type: () => {
+    equal(action.type, ADD_TODO)
+  },
+
+  id: () => {
+    equal(typeof(action.id), 'string')
+  },
+
+  text: () => {
+    equal(action.text, text)
+  },
+
 }
