@@ -33,7 +33,6 @@
     "babel-preset-stage-1": "6.5.0",
     "babel-register": "6.7.2",
     "browser-sync": "2.12.1",
-    "chai": "3.5.0",
     "chokidar-cli": "1.2.0",
     "clear-cli": "1.0.1",
     "css-loader": "0.23.1",
