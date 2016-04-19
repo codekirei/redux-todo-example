@@ -1,39 +1,42 @@
-// modules ---------------------------------------------------------------------
+// modules - node --------------------------------------------------------------
 
-import { expect } from 'chai'
+import { equal, deepEqual } from 'assert'
+
+// modules - local -------------------------------------------------------------
+
 import reducer, { initialState } from '../../src/reducers/todos-reducer'
-import {
-  addTodo,
-  toggleTodo,
-} from '../../src/actions'
+import { addTodo, toggleTodo } from '../../src/actions'
+
+// modules - test utils --------------------------------------------------------
+
 import forceDefault from '../test-utils/force-default-reducer'
-
-// setup -----------------------------------------------------------------------
-
-const text = 'foo'
-let addedTodo
+import multiEqual from '../test-utils/multi-equal'
 
 // cases -----------------------------------------------------------------------
 
-exports['todos-reducer'] = {
+exports['REDUCER: TodosReducer:'] = {
 
-  'returns expected initial state': () =>
-    expect(reducer(...forceDefault)).to.deep.equal(initialState),
+  'returns expected initial state': () => {
+    deepEqual(reducer(...forceDefault), initialState)
+  },
 
   addTodo: {
 
     'does not mutate state': () => {
       const state = []
-      reducer(state, addTodo(text))
-      expect(state.length).to.equal(0)
+      reducer(state, addTodo('foo'))
+      equal(state.length, 0)
     },
 
-    'adds a todo': {
-      before: () => { addedTodo = reducer([], addTodo(text))[0] },
-      id: () => expect(addedTodo.id).to.be.a('string'),
-      key: () => expect(addedTodo.key).to.equal(addedTodo.id),
-      text: () => expect(addedTodo.text).to.equal(text),
-      completed: () => expect(addedTodo.completed).to.be.false,
+    'adds a todo': () => {
+      const foo = 'foo'
+      const { id, key, text, completed } = reducer([], addTodo(foo))[0]
+      multiEqual([
+        ['id', typeof(id), 'string'],
+        ['key', key, id],
+        ['text', text, foo],
+        ['completed', completed, false],
+      ])
     },
 
   },
@@ -43,7 +46,7 @@ exports['todos-reducer'] = {
     'does not mutate state': () => {
       const state = [{ id: 1, completed: false }]
       reducer(state, toggleTodo(1))
-      expect(state[0].completed).to.equal(false)
+      equal(state[0].completed, false)
     },
 
     'toggles completed value of a todo': () => {
@@ -51,15 +54,15 @@ exports['todos-reducer'] = {
         { id: 1, completed: true },
         { id: 2, completed: false },
       ]
-      expect(reducer(state, toggleTodo(1))).to.deep.equal([
+      deepEqual(reducer(state, toggleTodo(1)), [
         { id: 1, completed: false },
         { id: 2, completed: false },
       ])
-      expect(reducer(state, toggleTodo(2))).to.deep.equal([
+      deepEqual(reducer(state, toggleTodo(2)), [
         { id: 1, completed: true },
         { id: 2, completed: true },
       ])
-      expect(reducer(state, toggleTodo(3))).to.deep.equal(state)
+      deepEqual(reducer(state, toggleTodo(3)), state)
     },
 
   },

@@ -41,11 +41,11 @@ exports['COMPONENT: TodoList:'] = {
     const twoTodos = render({ todos: [firstTodo, secondTodo] }).output.props.children
 
     multiEqual([
-      ['oneTodo length', oneTodo.length, 1],
-      ['twoTodos length', twoTodos.length, 2],
-      ['firstTodo text', oneTodo[0].props.text, firstTodo.text],
-      ['secondTodo text', twoTodos[1].props.text, secondTodo.text],
       ['children are Todo components', nameOf(oneTodo[0]), 'Todo'],
+      ['oneTodo length', oneTodo.length, 1],
+      ['firstTodo text', oneTodo[0].props.text, firstTodo.text],
+      ['twoTodos length', twoTodos.length, 2],
+      ['secondTodo text', twoTodos[1].props.text, secondTodo.text],
     ])
   },
 

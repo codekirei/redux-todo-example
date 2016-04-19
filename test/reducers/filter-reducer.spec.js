@@ -1,26 +1,36 @@
-import { expect } from 'chai'
+// modules - node --------------------------------------------------------------
+
+import { equal } from 'assert'
+
+// modules - local -------------------------------------------------------------
+
 import reducer, { initialState } from '../../src/reducers/filter-reducer'
-import {
-  SHOW_ALL,
-  SHOW_ACTIVE,
-} from '../../src/constants/filter-constants'
+import { SHOW_ALL, SHOW_ACTIVE } from '../../src/constants/filter-constants'
 import { setFilter } from '../../src/actions'
+
+// modules - test utils --------------------------------------------------------
+
 import forceDefault from '../test-utils/force-default-reducer'
 
-exports['filter-reducer'] = {
+// cases -----------------------------------------------------------------------
 
-  'returns expected initial state': () =>
-    expect(reducer(...forceDefault)).to.equal(initialState),
+exports['REDUCER: FilterReducer:'] = {
+
+  'returns expected initial state': () => {
+    equal(reducer(...forceDefault), initialState)
+  },
 
   setFilter: {
 
     'does not mutate state': () => {
       const state = SHOW_ALL
       reducer(state, setFilter(SHOW_ACTIVE))
-      expect(state).to.equal(SHOW_ALL)
+      equal(state, SHOW_ALL)
     },
 
-    'sets filter': () => expect(reducer(SHOW_ALL, setFilter(SHOW_ACTIVE))).to.equal(SHOW_ACTIVE),
+    'sets filter': () => {
+      equal(reducer(SHOW_ALL, setFilter(SHOW_ACTIVE)), SHOW_ACTIVE)
+    },
 
   },
 
