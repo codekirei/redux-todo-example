@@ -1,12 +1,20 @@
-// modules ---------------------------------------------------------------------
+// modules - node --------------------------------------------------------------
+
+import { equal, ok } from 'assert'
+
+// modules - npm ---------------------------------------------------------------
 
 import sinon from 'sinon'
-import { expect } from 'chai'
 
-import shallowRender from '../test-utils/shallow-render'
+// modules - local -------------------------------------------------------------
+
 import Todo from '../../src/components/todo.jsx'
 
-// prep ------------------------------------------------------------------------
+// modules - test utils --------------------------------------------------------
+
+import shallowRender from '../test-utils/shallow-render'
+
+// setup -----------------------------------------------------------------------
 
 const defaultProps = {
   completed: false,
@@ -14,40 +22,40 @@ const defaultProps = {
   text: 'foo',
 }
 
-let defaultOutput
-
 const render = shallowRender(Todo, defaultProps)
+
+let defaultOutput
 
 // cases -----------------------------------------------------------------------
 
-exports['<Todo />'] = {
+exports['COMPONENT: Todo:'] = {
 
   before: () => {
     defaultOutput = render().output
   },
 
-  'is a <li>': () => {
-    expect(defaultOutput.type).to.equal('li')
+  'is <li>': () => {
+    equal(defaultOutput.type, 'li')
   },
 
   'receives props.text': () => {
-    expect(defaultOutput.props.children).to.equal(defaultProps.text)
+    equal(defaultOutput.props.children, defaultProps.text)
   },
 
   'has no className when not completed': () => {
-    expect(defaultOutput.props.className).to.equal('')
+    equal(defaultOutput.props.className, '')
   },
 
   'has className todo--completed when completed': () => {
     const { output } = render({ completed: true })
-    expect(output.props.className).to.equal('todo--completed')
+    equal(output.props.className, 'todo--completed')
   },
 
   'handles clicks with props.clickHandler': () => {
     const spy = sinon.spy()
     const { output } = render({ clickHandler: spy })
     output.props.onClick()
-    expect(spy.called).to.equal(true)
+    ok(spy.called)
   },
 
 }
