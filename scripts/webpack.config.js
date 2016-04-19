@@ -1,11 +1,18 @@
+// modules - node --------------------------------------------------------------
+
 import path from 'path'
+
+// modules - npm ---------------------------------------------------------------
+
 import webpack from 'webpack'
 import ExtractTextPlugin, { extract } from 'extract-text-webpack-plugin'
 
+// setup -----------------------------------------------------------------------
+
 const cwd = process.cwd()
 
-// entry and output
-//------------------------------------------------------------------------------
+// entry -----------------------------------------------------------------------
+
 function entry(env) {
   const entries = []
   if (env === 'dev') entries.push('webpack-hot-middleware/client')
@@ -13,14 +20,16 @@ function entry(env) {
   return entries
 }
 
+// output ----------------------------------------------------------------------
+
 const output = {
   path: path.join(cwd, 'dist'),
   filename: 'app.js',
   publicPath: '/',
 }
 
-// loaders
-//------------------------------------------------------------------------------
+// loaders ---------------------------------------------------------------------
+
 function babelLoader(env) {
   const loader = {
     test: /\.jsx?$/,
@@ -45,8 +54,8 @@ const postcss = instance => [
 
 const loaders = env => [babelLoader(env), cssLoader(env)]
 
-// plugins
-//------------------------------------------------------------------------------
+// plugins ---------------------------------------------------------------------
+
 const plugins = env => []
   .concat(
   [ // common plugins
@@ -71,14 +80,16 @@ const plugins = env => []
     new ExtractTextPlugin('style.css', { allChunks: true }),
   ])
 
-// config
-//------------------------------------------------------------------------------
-export default (env = 'dev') => ({
-  output,
-  postcss,
+// combined config -------------------------------------------------------------
+
+const config = (env = 'dev') => ({
   entry: entry(env),
+  output,
   devtool: env === 'dev' ? 'cheap-module-eval-source-map' : false,
   noInfo: true,
   module: { loaders: loaders(env) },
+  postcss,
   plugins: plugins(env),
 })
+
+export default config
