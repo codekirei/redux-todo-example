@@ -12,6 +12,7 @@ import TodoForm from '../../src/components/todo-form.jsx'
 
 // modules - test utils --------------------------------------------------------
 
+import multiEqual from '../test-utils/multi-equal'
 import shallowRender from '../test-utils/shallow-render'
 
 // setup -----------------------------------------------------------------------
@@ -39,18 +40,14 @@ exports['COMPONENT: TodoForm:'] = {
 
     const [input, button] = defaultOutput.props.children
 
-    const childCases = [
-      // input
+    multiEqual([
       ['input.type', input.type, 'input'],
       ['input.props.type', input.props.type, 'text'],
       ['input.props.value', input.props.value, ''],
-      // button
       ['button.type', button.type, 'button'],
       ['button.props.type', button.props.type, 'submit'],
       ['button.props.children', button.props.children, 'Add Todo'],
-    ]
-
-    childCases.forEach(([m, a, e]) => equal(a, e, m))
+    ])
   },
 
   'calls props.handleSubmit with props.text': () => {

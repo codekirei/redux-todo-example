@@ -8,8 +8,9 @@ import TodoList from '../../src/components/todo-list.jsx'
 
 // modules - test utils --------------------------------------------------------
 
-import shallowRender from '../test-utils/shallow-render'
+import multiEqual from '../test-utils/multi-equal'
 import nameOf from '../test-utils/name-of'
+import shallowRender from '../test-utils/shallow-render'
 
 // setup -----------------------------------------------------------------------
 
@@ -39,35 +40,13 @@ exports['COMPONENT: TodoList:'] = {
     const oneTodo = render({ todos: [firstTodo] }).output.props.children
     const twoTodos = render({ todos: [firstTodo, secondTodo] }).output.props.children
 
-    const cases = [
-      {
-        actual: oneTodo.length,
-        expected: 1,
-        message: 'oneTodo.length',
-      },
-      {
-        actual: twoTodos.length,
-        expected: 2,
-        message: 'twoTodos.length',
-      },
-      {
-        actual: oneTodo[0].props.text,
-        expected: firstTodo.text,
-        message: 'firstTodo.text',
-      },
-      {
-        actual: twoTodos[1].props.text,
-        expected: secondTodo.text,
-        message: 'secondTodo.text',
-      },
-      {
-        actual: nameOf(oneTodo[0]),
-        expected: 'Todo',
-        message: 'nameOf Todo',
-      },
-    ]
-
-    cases.forEach(({ actual, expected, message }) => equal(actual, expected, message))
+    multiEqual([
+      ['oneTodo length', oneTodo.length, 1],
+      ['twoTodos length', twoTodos.length, 2],
+      ['firstTodo text', oneTodo[0].props.text, firstTodo.text],
+      ['secondTodo text', twoTodos[1].props.text, secondTodo.text],
+      ['children are Todo components', nameOf(oneTodo[0]), 'Todo'],
+    ])
   },
 
 }
