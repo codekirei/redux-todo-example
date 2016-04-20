@@ -19,7 +19,7 @@ exports['REDUCER: InputReducer:'] = {
     deepEqual(reducer(...forceDefault), initialState)
   },
 
-  addTodo: {
+  'addTodo': {
 
     'does not mutate state': () => {
       const state = 'foo'
@@ -33,7 +33,7 @@ exports['REDUCER: InputReducer:'] = {
 
   },
 
-  setInput: {
+  'setInput': {
 
     'does not mutate state': () => {
       const state = 'foo'

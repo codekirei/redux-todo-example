@@ -31,7 +31,7 @@ let defaultOutput
 
 exports['COMPONENT: TodoForm:'] = {
 
-  before: () => {
+  'before': () => {
     defaultOutput = render().output
   },
 

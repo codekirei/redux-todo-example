@@ -21,7 +21,7 @@ let defaultOutput
 
 exports['COMPONENT: Footer:'] = {
 
-  before: () => {
+  'before': () => {
     defaultOutput = render().output
   },
 

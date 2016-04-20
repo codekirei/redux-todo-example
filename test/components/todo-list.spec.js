@@ -26,7 +26,7 @@ let defaultOutput
 
 exports['COMPONENT: TodoList:'] = {
 
-  before: () => {
+  'before': () => {
     defaultOutput = render().output
   },
 

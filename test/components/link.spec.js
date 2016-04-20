@@ -30,7 +30,7 @@ let defaultOutput
 
 exports['COMPONENT: Link:'] = {
 
-  before: () => {
+  'before': () => {
     defaultOutput = render().output
   },
 

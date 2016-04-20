@@ -20,7 +20,7 @@ exports['REDUCER: TodosReducer:'] = {
     deepEqual(reducer(...forceDefault), initialState)
   },
 
-  addTodo: {
+  'addTodo': {
 
     'does not mutate state': () => {
       const state = []
@@ -41,7 +41,7 @@ exports['REDUCER: TodosReducer:'] = {
 
   },
 
-  toggleTodo: {
+  'toggleTodo': {
 
     'does not mutate state': () => {
       const state = [{ id: 1, completed: false }]

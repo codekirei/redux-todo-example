@@ -20,7 +20,7 @@ exports['REDUCER: FilterReducer:'] = {
     equal(reducer(...forceDefault), initialState)
   },
 
-  setFilter: {
+  'setFilter': {
 
     'does not mutate state': () => {
       const state = SHOW_ALL

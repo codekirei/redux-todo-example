@@ -30,7 +30,7 @@ let defaultOutput
 
 exports['COMPONENT: Todo:'] = {
 
-  before: () => {
+  'before': () => {
     defaultOutput = render().output
   },
 
