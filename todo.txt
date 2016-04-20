@@ -1,5 +1,4 @@
 - update deps
-- fix eslint errs
 - move all configs into root
 - turn shallowRender into a module
 - look into replacing jsdom with cheerio for prod build

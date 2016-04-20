@@ -15,11 +15,11 @@ export default (todos = initialState, { type, id, text }) => {
         completed: false,
       })
     case TOGGLE_TODO:
-      return todos.map(todo =>
+      return todos.map(todo => (
         todo.id !== id
           ? todo
           : Object.assign({}, todo, { completed: !todo.completed })
-      )
+      ))
     default:
       return todos
   }
