@@ -2,6 +2,8 @@
   "extends": "airbnb",
   "parser": "babel-eslint",
   "rules": {
-    "semi": [2, "never"]
+    "semi": ["error", "never"],
+    "quote-props": ["error", "consistent-as-needed"],
+    "no-multi-spaces": ["error", { "exceptions": { "VariableDeclarator": true }}]
   }
 }
