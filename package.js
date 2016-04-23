@@ -45,17 +45,15 @@ const dependencies = {
   'node-uuid': '1.4.7',
   'react': '15.0.1',
   'react-dom': '15.0.1',
-  'react-redux': '4.4.4',
-  'redux': '3.4.0',
+  'react-redux': '4.4.5',
+  'redux': '3.5.1',
 }
 
 const devDependencies = {
 
   // babel ---------------------------------------------------------------------
 
-  'babel-cli': '6.7.5',
-  'babel-eslint': '6.0.2',
-  'babel-loader': '6.2.4',
+  'babel-cli': '6.7.7',
   'babel-preset-es2015': '6.6.0',
   'babel-preset-react': '6.5.0',
   'babel-preset-stage-1': '6.5.0',
@@ -63,12 +61,12 @@ const devDependencies = {
 
   // build utils ---------------------------------------------------------------
 
-  'html-minifier': '1.5.0',
-  'jsdom': '8.3.1',
+  'html-minifier': '2.0.0',
+  'jsdom': '8.4.0',
 
   // cli utils -----------------------------------------------------------------
 
-  'browser-sync': '2.12.1',
+  'browser-sync': '2.12.3',
   'chokidar-cli': '1.2.0',
   'clear-cli': '1.0.1',
   'npm-run-all': '1.7.0',
@@ -76,6 +74,7 @@ const devDependencies = {
 
   // eslint --------------------------------------------------------------------
 
+  'babel-eslint': '6.0.3',
   'eslint': '2.8.0',
   'eslint-config-airbnb': '7.0.0',
   'eslint-config-airbnb-base': '1.0.0',
@@ -102,8 +101,8 @@ const devDependencies = {
 
   'redux-devtools': '3.2.0',
   'redux-devtools-dock-monitor': '1.1.1',
-  'redux-devtools-log-monitor': '1.0.9',
-  'redux-immutable-state-invariant': '1.2.2',
+  'redux-devtools-log-monitor': '1.0.11',
+  'redux-immutable-state-invariant': '1.2.3',
 
   // stylelint -----------------------------------------------------------------
 
@@ -112,11 +111,12 @@ const devDependencies = {
 
   // webpack -------------------------------------------------------------------
 
+  'babel-loader': '6.2.4',
   'css-loader': '0.23.1',
   'extract-text-webpack-plugin': '1.0.1',
   'postcss-loader': '0.8.2',
   'style-loader': '0.13.1',
-  'webpack': '1.12.15',
+  'webpack': '1.13.0',
   'webpack-dev-middleware': 'github:webpack/webpack-dev-middleware',
   'webpack-hot-middleware': '2.10.0',
 
