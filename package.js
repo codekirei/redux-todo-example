@@ -46,7 +46,7 @@ const dependencies = {
   'react': '15.0.1',
   'react-dom': '15.0.1',
   'react-redux': '4.4.5',
-  'redux': '3.5.1',
+  'redux': '3.5.2',
 }
 
 const devDependencies = {
@@ -61,7 +61,7 @@ const devDependencies = {
 
   // build utils ---------------------------------------------------------------
 
-  'html-minifier': '2.0.0',
+  'html-minifier': '2.1.0',
   'jsdom': '8.4.0',
 
   // cli utils -----------------------------------------------------------------
@@ -69,7 +69,7 @@ const devDependencies = {
   'browser-sync': '2.12.3',
   'chokidar-cli': '1.2.0',
   'clear-cli': '1.0.1',
-  'npm-run-all': '1.7.0',
+  'npm-run-all': '1.8.0',
   'rimraf': '2.5.2',
 
   // eslint --------------------------------------------------------------------
@@ -106,8 +106,8 @@ const devDependencies = {
 
   // stylelint -----------------------------------------------------------------
 
-  'stylelint': '5.4.0',
-  'stylelint-config-standard': '5.0.0',
+  'stylelint': '6.1.1',
+  'stylelint-config-standard': '6.0.0',
 
   // webpack -------------------------------------------------------------------
 
