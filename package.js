@@ -15,9 +15,9 @@ const scripts = {
 
   // cleaning ------------------------------------------------------------------
 
-  'clean': 'npm-run-all clean:*',
-  'clean:dist': 'rimraf dist',
   'clean:coverage': 'rimraf coverage',
+  'clean:dist': 'rimraf dist',
+  'clean:modules': 'rimraf node_modules',
 
   // linting -------------------------------------------------------------------
 
@@ -43,8 +43,8 @@ const scripts = {
 
 const dependencies = {
   'node-uuid': '1.4.7',
-  'react': '15.0.1',
-  'react-dom': '15.0.1',
+  'react': '15.0.2',
+  'react-dom': '15.0.2',
   'react-redux': '4.4.5',
   'redux': '3.5.2',
 }
@@ -62,11 +62,11 @@ const devDependencies = {
   // build utils ---------------------------------------------------------------
 
   'html-minifier': '2.1.0',
-  'jsdom': '8.4.0',
+  'jsdom': '8.4.1',
 
   // cli utils -----------------------------------------------------------------
 
-  'browser-sync': '2.12.3',
+  'browser-sync': '2.12.5',
   'chokidar-cli': '1.2.0',
   'clear-cli': '1.0.1',
   'npm-run-all': '1.8.0',
@@ -74,13 +74,16 @@ const devDependencies = {
 
   // eslint --------------------------------------------------------------------
 
-  'babel-eslint': '6.0.3',
-  'eslint': '2.8.0',
-  'eslint-config-airbnb': '7.0.0',
-  'eslint-config-airbnb-base': '1.0.0',
-  'eslint-plugin-import': '1.5.0',
-  'eslint-plugin-jsx-a11y': '0.6.2',
-  'eslint-plugin-react': '5.0.1',
+  'eslint': '2.9.0',
+  'eslint-config-kirei-react': '0.1.0',
+
+  // 'babel-eslint': '6.0.3',
+  // 'eslint': '2.8.0',
+  // 'eslint-config-airbnb': '7.0.0',
+  // 'eslint-config-airbnb-base': '1.0.0',
+  // 'eslint-plugin-import': '1.5.0',
+  // 'eslint-plugin-jsx-a11y': '0.6.2',
+  // 'eslint-plugin-react': '5.0.1',
 
   // testing -------------------------------------------------------------------
 
@@ -89,7 +92,7 @@ const devDependencies = {
   'lcov-summary': '1.0.1',
   'mocha': '2.4.5',
   'mocha-tldr-reporter': '1.0.0',
-  'react-addons-test-utils': '15.0.1',
+  'react-addons-test-utils': '15.0.2',
   'sinon': '1.17.3',
 
   // postcss -------------------------------------------------------------------
@@ -106,7 +109,7 @@ const devDependencies = {
 
   // stylelint -----------------------------------------------------------------
 
-  'stylelint': '6.1.1',
+  'stylelint': '6.2.2',
   'stylelint-config-standard': '6.0.0',
 
   // webpack -------------------------------------------------------------------
@@ -114,7 +117,7 @@ const devDependencies = {
   'babel-loader': '6.2.4',
   'css-loader': '0.23.1',
   'extract-text-webpack-plugin': '1.0.1',
-  'postcss-loader': '0.8.2',
+  'postcss-loader': '0.9.1',
   'style-loader': '0.13.1',
   'webpack': '1.13.0',
   'webpack-dev-middleware': 'github:webpack/webpack-dev-middleware',
