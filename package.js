@@ -75,7 +75,7 @@ const devDependencies = {
   // eslint --------------------------------------------------------------------
 
   'eslint': '2.9.0',
-  'eslint-config-kirei-react': '0.1.0',
+  'eslint-config-kirei-react': '0.1.1',
 
   // 'babel-eslint': '6.0.3',
   // 'eslint': '2.8.0',
