@@ -33,6 +33,6 @@ const links = filters.map(({ filter, text }) => (
   />
 ))
 
-const Footer = () => <p>Show:{' '}{ intersperse(links, separator) }</p>
+const Footer = () => <p>Show:{' '}{intersperse(links, separator)}</p>
 
 export default Footer

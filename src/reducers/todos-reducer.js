@@ -11,7 +11,6 @@ export default (todos = initialState, { type, id, text }) => {
       return todos.concat({
         id,
         text,
-        key: id,
         completed: false,
       })
     case TOGGLE_TODO:

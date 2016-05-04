@@ -1,6 +1,6 @@
-const name    = 'redux-todo-example'
+const name = 'redux-todo-example'
 const version = '0.0.0'
-const author  = 'Jacob Blakely (codekirei)'
+const author = 'Jacob Blakely (codekirei)'
 const license = 'MIT'
 
 const scripts = {
@@ -75,15 +75,7 @@ const devDependencies = {
   // eslint --------------------------------------------------------------------
 
   'eslint': '2.9.0',
-  'eslint-config-kirei-react': '0.1.1',
-
-  // 'babel-eslint': '6.0.3',
-  // 'eslint': '2.8.0',
-  // 'eslint-config-airbnb': '7.0.0',
-  // 'eslint-config-airbnb-base': '1.0.0',
-  // 'eslint-plugin-import': '1.5.0',
-  // 'eslint-plugin-jsx-a11y': '0.6.2',
-  // 'eslint-plugin-react': '5.0.1',
+  'eslint-config-kirei-react': '0.2.4',
 
   // testing -------------------------------------------------------------------
 

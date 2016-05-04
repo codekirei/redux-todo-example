@@ -30,10 +30,9 @@ exports['REDUCER: TodosReducer:'] = {
 
     'adds a todo': () => {
       const foo = 'foo'
-      const { id, key, text, completed } = reducer([], addTodo(foo))[0]
+      const { id, text, completed } = reducer([], addTodo(foo))[0]
       multiEqual([
         ['id', typeof(id), 'string'],
-        ['key', key, id],
         ['text', text, foo],
         ['completed', completed, false],
       ])

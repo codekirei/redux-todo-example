@@ -1,6 +1,7 @@
 import React from 'react'
-import { render } from 'react-dom'
 import { Provider } from 'react-redux'
+import { render } from 'react-dom'
+
 import { ProdRoot } from './components/root'
 import './styles/index.css'
 

@@ -2,10 +2,11 @@
 
 import path from 'path'
 import webpack from 'webpack'
-import makeConfig from './webpack.config'
 import browserSync from 'browser-sync'
 import devMiddleware from 'webpack-dev-middleware'
 import hotMiddleware from 'webpack-hot-middleware'
+
+import makeConfig from './webpack.config'
 
 const config = makeConfig()
 const bundler = webpack(config)

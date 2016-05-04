@@ -58,11 +58,11 @@ exports['COMPONENT: TodoForm:'] = {
     ok(spy.calledWith(text))
   },
 
-  'calls props.handleInput on input onChange event': () => {
+  'calls props.handleInput on input event': () => {
     const spy = sinon.spy()
     const { output } = render({ handleInput: spy })
     const [input] = output.props.children
-    input.props.onChange()
+    input.props.onInput()
     ok(spy.called)
   },
 

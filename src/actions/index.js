@@ -1,10 +1,11 @@
+import { v4 as uuid } from 'node-uuid'
+
 import {
   ADD_TODO,
   SET_FILTER,
   SET_INPUT,
   TOGGLE_TODO,
 } from '../constants/action-constants'
-import { v4 as uuid } from 'node-uuid'
 
 export const addTodo = text => ({
   type: ADD_TODO,

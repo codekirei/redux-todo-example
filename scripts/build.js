@@ -4,9 +4,10 @@ import path from 'path'
 import fs from 'fs'
 import rimraf from 'rimraf'
 import webpack from 'webpack'
-import webpackConfig from '../configs/webpack'
 import { jsdom, serializeDocument as serialize } from 'jsdom'
 import { minify } from 'html-minifier'
+
+import webpackConfig from './webpack.config'
 
 const conf = webpackConfig('production')
 

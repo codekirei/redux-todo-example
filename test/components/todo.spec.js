@@ -18,7 +18,8 @@ import shallowRender from '../test-utils/shallow-render'
 
 const defaultProps = {
   completed: false,
-  clickHandler: () => {},
+  handleClick: () => {},
+  handleKeyPress: () => {},
   text: 'foo',
 }
 
@@ -51,10 +52,17 @@ exports['COMPONENT: Todo:'] = {
     equal(output.props.className, 'todo--completed')
   },
 
-  'handles clicks with props.clickHandler': () => {
+  'handles clicks with props.handleClick': () => {
     const spy = sinon.spy()
-    const { output } = render({ clickHandler: spy })
+    const { output } = render({ handleClick: spy })
     output.props.onClick()
+    ok(spy.called)
+  },
+
+  'handles keypresses with props.handleKeyPress': () => {
+    const spy = sinon.spy()
+    const { output } = render({ handleKeyPress: spy })
+    output.props.onKeyPress()
     ok(spy.called)
   },
 
