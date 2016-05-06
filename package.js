@@ -53,15 +53,15 @@ const devDependencies = {
 
   // babel ---------------------------------------------------------------------
 
-  'babel-cli': '6.7.7',
+  'babel-cli': '6.8.0',
   'babel-preset-es2015': '6.6.0',
   'babel-preset-react': '6.5.0',
   'babel-preset-stage-1': '6.5.0',
-  'babel-register': '6.7.2',
+  'babel-register': '6.8.0',
 
   // build utils ---------------------------------------------------------------
 
-  'html-minifier': '2.1.1',
+  'html-minifier': '2.1.2',
   'jsdom': '8.5.0',
 
   // cli utils -----------------------------------------------------------------
@@ -85,12 +85,12 @@ const devDependencies = {
   'mocha': '2.4.5',
   'mocha-tldr-reporter': '1.0.0',
   'react-addons-test-utils': '15.0.2',
-  'sinon': '1.17.3',
+  'sinon': '1.17.4',
 
   // postcss -------------------------------------------------------------------
 
   'kirei-css': '0.1.1',
-  'postcss-import': '8.1.0',
+  'postcss-import': '8.1.1',
 
   // redux dev tooling ---------------------------------------------------------
 
