@@ -94,7 +94,7 @@ const devDependencies = {
 
   // redux dev tooling ---------------------------------------------------------
 
-  'redux-devtools': '3.2.0',
+  'redux-devtools': '3.3.1',
   'redux-devtools-dock-monitor': '1.1.1',
   'redux-devtools-log-monitor': '1.0.11',
   'redux-immutable-state-invariant': '1.2.3',
