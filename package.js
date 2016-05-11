@@ -66,7 +66,7 @@ const devDependencies = {
 
   // cli utils -----------------------------------------------------------------
 
-  'browser-sync': '2.12.5',
+  'browser-sync': '2.12.7',
   'chokidar-cli': '1.2.0',
   'clear-cli': '1.0.1',
   'npm-run-all': '1.8.0',
