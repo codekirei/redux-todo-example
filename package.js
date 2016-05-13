@@ -66,10 +66,10 @@ const devDependencies = {
 
   // cli utils -----------------------------------------------------------------
 
-  'browser-sync': '2.12.7',
+  'browser-sync': '2.12.8',
   'chokidar-cli': '1.2.0',
   'clear-cli': '1.0.1',
-  'npm-run-all': '1.8.0',
+  'npm-run-all': '2.1.0',
   'rimraf': '2.5.2',
 
   // eslint --------------------------------------------------------------------
@@ -79,7 +79,7 @@ const devDependencies = {
 
   // testing -------------------------------------------------------------------
 
-  'ignore-styles': '1.2.0',
+  'ignore-styles': '2.0.0',
   'istanbul': '1.0.0-alpha.2',
   'lcov-summary': '1.0.1',
   'mocha': '2.4.5',
