@@ -53,11 +53,11 @@ const devDependencies = {
 
   // babel ---------------------------------------------------------------------
 
-  'babel-cli': '6.8.0',
-  'babel-preset-es2015': '6.6.0',
+  'babel-cli': '6.9.0',
+  'babel-preset-es2015': '6.9.0',
   'babel-preset-react': '6.5.0',
   'babel-preset-stage-1': '6.5.0',
-  'babel-register': '6.8.0',
+  'babel-register': '6.9.0',
 
   // build utils ---------------------------------------------------------------
 
