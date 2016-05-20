@@ -69,7 +69,7 @@ const devDependencies = {
   'browser-sync': '2.12.8',
   'chokidar-cli': '1.2.0',
   'clear-cli': '1.0.1',
-  'npm-run-all': '2.1.0',
+  'npm-run-all': '2.1.1',
   'rimraf': '2.5.2',
 
   // eslint --------------------------------------------------------------------
@@ -101,8 +101,8 @@ const devDependencies = {
 
   // stylelint -----------------------------------------------------------------
 
-  'stylelint': '6.4.1',
-  'stylelint-config-standard': '7.0.0',
+  'stylelint': '6.4.2',
+  'stylelint-config-standard': '8.0.0',
 
   // webpack -------------------------------------------------------------------
 
