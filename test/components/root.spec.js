@@ -4,7 +4,7 @@ import { equal } from 'assert'
 
 // modules - local -------------------------------------------------------------
 
-import { DevRoot, ProdRoot } from '../../src/components/root'
+import { DevRoot, ProdRoot } from '../../src/components/root.jsx'
 
 // modules - test utils --------------------------------------------------------
 

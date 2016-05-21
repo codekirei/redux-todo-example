@@ -43,8 +43,8 @@ const scripts = {
 
 const dependencies = {
   'node-uuid': '1.4.7',
-  'react': '15.0.2',
-  'react-dom': '15.0.2',
+  'react': '15.1.0',
+  'react-dom': '15.1.0',
   'react-redux': '4.4.5',
   'redux': '3.5.2',
 }
@@ -84,7 +84,7 @@ const devDependencies = {
   'lcov-summary': '1.0.1',
   'mocha': '2.4.5',
   'mocha-tldr-reporter': '1.0.0',
-  'react-addons-test-utils': '15.0.2',
+  'react-addons-test-utils': '15.1.0',
   'sinon': '1.17.4',
 
   // postcss -------------------------------------------------------------------
@@ -101,7 +101,7 @@ const devDependencies = {
 
   // stylelint -----------------------------------------------------------------
 
-  'stylelint': '6.4.2',
+  'stylelint': '6.5.0',
   'stylelint-config-standard': '8.0.0',
 
   // webpack -------------------------------------------------------------------
@@ -111,7 +111,7 @@ const devDependencies = {
   'extract-text-webpack-plugin': '1.0.1',
   'postcss-loader': '0.9.1',
   'style-loader': '0.13.1',
-  'webpack': '1.13.0',
+  'webpack': '1.13.1',
   'webpack-dev-middleware': 'github:webpack/webpack-dev-middleware',
   'webpack-hot-middleware': '2.10.0',
 
