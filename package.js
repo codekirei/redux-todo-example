@@ -82,7 +82,7 @@ const devDependencies = {
   'ignore-styles': '2.0.0',
   'istanbul': '1.0.0-alpha.2',
   'lcov-summary': '1.0.1',
-  'mocha': '2.5.2',
+  'mocha': '2.5.3',
   'mocha-tldr-reporter': '1.0.0',
   'react-addons-test-utils': '15.1.0',
   'sinon': '1.17.4',
