@@ -62,7 +62,7 @@ const devDependencies = {
   // build utils ---------------------------------------------------------------
 
   'html-minifier': '2.1.3',
-  'jsdom': '9.1.0',
+  'jsdom': '9.2.0',
 
   // cli utils -----------------------------------------------------------------
 
@@ -82,7 +82,7 @@ const devDependencies = {
   'ignore-styles': '2.0.0',
   'istanbul': '1.0.0-alpha.2',
   'lcov-summary': '1.0.1',
-  'mocha': '2.4.5',
+  'mocha': '2.5.2',
   'mocha-tldr-reporter': '1.0.0',
   'react-addons-test-utils': '15.1.0',
   'sinon': '1.17.4',
@@ -101,7 +101,7 @@ const devDependencies = {
 
   // stylelint -----------------------------------------------------------------
 
-  'stylelint': '6.5.0',
+  'stylelint': '6.5.1',
   'stylelint-config-standard': '8.0.0',
 
   // webpack -------------------------------------------------------------------
