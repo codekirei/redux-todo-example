@@ -53,33 +53,33 @@ const devDependencies = {
 
   // babel ---------------------------------------------------------------------
 
-  'babel-cli': '6.9.0',
+  'babel-cli': '6.10.1',
   'babel-preset-es2015': '6.9.0',
-  'babel-preset-react': '6.5.0',
+  'babel-preset-react': '6.11.0',
   'babel-preset-stage-1': '6.5.0',
   'babel-register': '6.9.0',
 
   // build utils ---------------------------------------------------------------
 
-  'html-minifier': '2.1.3',
-  'jsdom': '9.2.0',
+  'html-minifier': '2.1.6',
+  'jsdom': '9.3.0',
 
   // cli utils -----------------------------------------------------------------
 
-  'browser-sync': '2.12.8',
+  'browser-sync': '2.13.0',
   'chokidar-cli': '1.2.0',
   'clear-cli': '1.0.1',
-  'npm-run-all': '2.1.1',
+  'npm-run-all': '2.2.2',
   'rimraf': '2.5.2',
 
   // eslint --------------------------------------------------------------------
 
-  'eslint': '2.9.0',
+  'eslint': '2.13.1',
   'eslint-config-kirei-react': '0.2.4',
 
   // testing -------------------------------------------------------------------
 
-  'ignore-styles': '2.0.0',
+  'ignore-styles': '4.0.0',
   'istanbul': '1.0.0-alpha.2',
   'lcov-summary': '1.0.1',
   'mocha': '2.5.3',
@@ -101,8 +101,8 @@ const devDependencies = {
 
   // stylelint -----------------------------------------------------------------
 
-  'stylelint': '6.5.1',
-  'stylelint-config-standard': '8.0.0',
+  'stylelint': '6.7.1',
+  'stylelint-config-standard': '9.0.0',
 
   // webpack -------------------------------------------------------------------
 
@@ -113,7 +113,7 @@ const devDependencies = {
   'style-loader': '0.13.1',
   'webpack': '1.13.1',
   'webpack-dev-middleware': 'github:webpack/webpack-dev-middleware',
-  'webpack-hot-middleware': '2.10.0',
+  'webpack-hot-middleware': '2.11.0',
 
 }
 
